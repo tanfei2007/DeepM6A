@@ -1,6 +1,7 @@
 #************************
-# Deep Residual Learning 
-# for DNA Methylation
+# Deep Learning 
+#for DNA Methylation on
+#
 # Fei Tan
 # ft54@njit.edu
 #************************
