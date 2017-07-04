@@ -1,6 +1,7 @@
 #************************
-# Deep Residual Learning 
-# for DNA Methylation
+# Deep Learning 
+# for DNA Methylation on
+# N6-Adenine
 # Fei Tan
 # ft54@njit.edu
 #************************
@@ -34,7 +35,6 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.layers.wrappers import Bidirectional
 from keras.regularizers import l1,l2
 from keras.layers.normalization import BatchNormalization
-from residual_blocks import building_residual_block
 from keras.models import load_model
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 import matplotlib
@@ -158,22 +158,7 @@ model.add(LeakyReLU(alpha=.001))
 #model.add(MaxPooling1D(pool_length=2, stride=2))
 model.add(Dropout(0.5))
 
-"""
-#*******************************
-# 6 convolutional layer
-#*******************************
-model.add(Convolution1D(nb_filter=40,
-                        filter_length=4,
-                        border_mode="valid",
-                        activation="linear",
-                        subsample_length=1, init='he_normal',
-			name = "cov6"))
 
-#model.add(Activation('relu'))
-model.add(LeakyReLU(alpha=.001))
-model.add(MaxPooling1D(pool_length=2, stride=2))
-model.add(Dropout(0.2))
-"""
 #**********************************
 # post layers
 #**********************************
