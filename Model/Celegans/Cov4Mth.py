@@ -1,7 +1,7 @@
 #************************
 # Deep Learning 
-#for DNA Methylation on
-#
+# for DNA Methylation on
+# N6-Adenine
 # Fei Tan
 # ft54@njit.edu
 #************************
