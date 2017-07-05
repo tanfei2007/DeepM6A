@@ -1,0 +1,5 @@
+require(readr)
+require(DT)
+ecoli_csv<-read_csv('ecoli_merge.csv')
+y <- datatable(ecoli_csv)
+DT::saveWidget(y, 'ecoli.html')
