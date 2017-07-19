@@ -1,5 +1,6 @@
 
 length = 30
+
 **************vadiation results on validation dataset************
 31335/31335 [==============================] - 44s   
 
@@ -37,5 +38,7 @@ positive ---> precision:0.919756158248, recall:0.919241529375, f1score:0.9194987
 
 
 length = 50
+
+
 
 
