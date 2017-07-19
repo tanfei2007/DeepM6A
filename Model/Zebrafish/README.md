@@ -1,4 +1,5 @@
 
+length = 30
 **************vadiation results on validation dataset************
 31335/31335 [==============================] - 44s   
 
@@ -33,3 +34,8 @@ negative ---> precision:0.919241529375, recall:0.919756158248, f1score:0.9194987
 positive ---> precision:0.919756158248, recall:0.919241529375, f1score:0.919498771804, support:16085
 
 ************************
+
+
+length = 50
+
+
