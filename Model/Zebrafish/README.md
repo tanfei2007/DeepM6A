@@ -39,6 +39,14 @@ positive ---> precision:0.919756158248, recall:0.919241529375, f1score:0.9194987
 
 length = 50
 
+auc: 0.984421876488
 
+mcc: 0.879633814614
+
+negative ---> precision:0.948085699797, recall:0.93039313262, f1score:0.939156096948, support:16076
+
+positive ---> precision:0.931705828502, recall:0.949082996581, f1score:0.940314136126, support:16085
+
+************************
 
 
