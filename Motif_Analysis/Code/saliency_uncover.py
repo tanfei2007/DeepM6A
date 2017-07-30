@@ -23,7 +23,7 @@ import math
 # data and model loading
 #***********************
 ## configuration
-model_file = '../model/bestmodel_len30_index1_filter190.hdf5'
+model_file = '../model/bestmodel_30.hdf5'
 seq_file = '../seq/m6A_30.test_1.hdf5'
 _EPSILON = K.epsilon()
 
