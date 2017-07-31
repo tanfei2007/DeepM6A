@@ -65,7 +65,7 @@ for i in range(len(idxs)):
 seq_freq = np.zeros(X_test.shape[1:])
 seq_freq_num = np.zeros(X_test.shape[1:])
 for i in range(rslt_saliency.shape[0]):
-	if rslt_class[i] == 1 and y_test[i] == 1:
+	if (rslt_class[i] == 1 and y_test[i] == 1) or (rslt_class[i] == 0 and y_test[i] == 0):
 		saliency = rslt_saliency[i,:,:]
 		input = X_test[i,:,:]
 		saliency_input = saliency * input
