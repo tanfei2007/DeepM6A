@@ -17,5 +17,5 @@ BioProject information: NCBI Bioproject: 10719
 
 https://genome.ucsc.edu/cgi-bin/hgTracks?db=hub_121515_araTha1&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr1%3A20726070%2D20730070&hgsid=638159323_twXxbVxAJGp1ka2rSbaz2BoAURcA
 
-refSeq(fasta)
+refGenome(fasta)
 https://www.ncbi.nlm.nih.gov/assembly/GCF_000001735.3/
