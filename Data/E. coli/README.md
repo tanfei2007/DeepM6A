@@ -12,3 +12,6 @@ NC_000913.2	 	Nc0009132
 Sample position queries
 
 A genome position can be specified by a chromosomal coordinate range, a gene name, a gene common name or a gene synonym. Names and common names of elements in various annotation tracks as well as lifted-over annotation tracks can also be used to query for the region of interest.
+
+
+https://genome.ucsc.edu/cgi-bin/hgGateway?hgsid=638159323_twXxbVxAJGp1ka2rSbaz2BoAURcA
