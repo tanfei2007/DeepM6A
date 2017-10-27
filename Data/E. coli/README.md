@@ -18,4 +18,4 @@ https://genome.ucsc.edu/cgi-bin/hgTracks?db=hub_22619_EscherichiaColiK12SubstrMg
 
 fasta:
 
-https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.3?report=fasta
+https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2?report=fasta
