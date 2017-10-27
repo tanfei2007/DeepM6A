@@ -14,5 +14,4 @@ NCBI Assembly ID: 202931 (Release 6 plus ISO1 MT)
 
 NCBI BioProject ID: 164
 
-
-https://genome.ucsc.edu/cgi-bin/hgGateway
+https://genome.ucsc.edu/cgi-bin/hgTracks?db=dm6&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr2L%3A826001%2D851000&hgsid=638159323_twXxbVxAJGp1ka2rSbaz2BoAURcA
