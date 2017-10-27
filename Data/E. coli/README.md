@@ -15,3 +15,7 @@ A genome position can be specified by a chromosomal coordinate range, a gene nam
 
 
 https://genome.ucsc.edu/cgi-bin/hgTracks?db=hub_22619_EscherichiaColiK12SubstrMg1655Uid57779&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=Nc0009132%3A1%2D1000&hgsid=638159323_twXxbVxAJGp1ka2rSbaz2BoAURcA
+
+fasta:
+
+https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.3?report=fasta
