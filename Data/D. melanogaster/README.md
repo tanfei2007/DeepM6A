@@ -14,6 +14,5 @@ NCBI Assembly ID: 202931 (Release 6 plus ISO1 MT)
 
 NCBI BioProject ID: 164
 
-Zero-based index and the end position is excluded (like python index or slice)
 
 https://genome.ucsc.edu/cgi-bin/hgGateway
