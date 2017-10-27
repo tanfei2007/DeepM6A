@@ -10,7 +10,11 @@ gene_posSite<- function(input_file, output_file){
 
 
 # for D. melanogaster
-gene_posSite()  
+gene_posSite(input_file = '825_m6A_25x_novar_dev03.bed', output_file = 'm6A_dm_pos.csv')  
+
+# for A. thaliana
+gene_posSite(input_file = 'm6A_TAIR10.bed', output_file = 'm6A_ara_pos.csv')
   
-  
+# for A. thaliana
+gene_posSite(input_file = 'm6A_ecoli.bed', output_file = 'm6A_ecoli_pos.csv')  
   
