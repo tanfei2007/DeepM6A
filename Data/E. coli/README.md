@@ -14,4 +14,4 @@ Sample position queries
 A genome position can be specified by a chromosomal coordinate range, a gene name, a gene common name or a gene synonym. Names and common names of elements in various annotation tracks as well as lifted-over annotation tracks can also be used to query for the region of interest.
 
 
-https://genome.ucsc.edu/cgi-bin/hgGateway?hgsid=638159323_twXxbVxAJGp1ka2rSbaz2BoAURcA
+https://genome.ucsc.edu/cgi-bin/hgTracks?db=hub_22619_EscherichiaColiK12SubstrMg1655Uid57779&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=Nc0009132%3A1%2D1000&hgsid=638159323_twXxbVxAJGp1ka2rSbaz2BoAURcA
