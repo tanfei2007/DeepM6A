@@ -17,6 +17,6 @@ NCBI BioProject ID: 164
 https://genome.ucsc.edu/cgi-bin/hgTracks?db=dm6&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr2L%3A826001%2D851000&hgsid=638159323_twXxbVxAJGp1ka2rSbaz2BoAURcA
 
 
-refGenome (fasta)
+refGenome (fasta) dm6.fa.gz
 
 http://hgdownload.soe.ucsc.edu/goldenPath/dm6/bigZips/
