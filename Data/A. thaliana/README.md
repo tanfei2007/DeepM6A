@@ -14,3 +14,5 @@ NCBI Genome information: NCBI genome/4 (Arabidopsis thaliana)
 NCBI Assembly information: NCBI assembly/237408 (TAIR 10)
 
 BioProject information: NCBI Bioproject: 10719
+
+https://genome.ucsc.edu/cgi-bin/hgGateway?hgsid=638159323_twXxbVxAJGp1ka2rSbaz2BoAURcA
