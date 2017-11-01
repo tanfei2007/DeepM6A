@@ -1,4 +1,5 @@
 
+33700 samples
 
 The EscherichiaColiK12SubstrMg1655Uid57779 assembly is the complete genome assembly of Escherichia coli K 12 substr MG1655, downloaded from the NCBI assembly database. Escherichia coli K 12 substr MG1655 belongs to phylogroup A. For more information about this assembly, see K12_MG1655 in the NCBI database.
 
