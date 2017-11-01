@@ -1,5 +1,7 @@
 
 
+19632 positive samples
+
 
 UCSC Genome Browser assembly ID: araTha1
 
