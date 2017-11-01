@@ -1,4 +1,4 @@
-chr,coordinate,strand,IPD_ratio,frac,fracLow,fracUp
+chr,coordinate,strand,IPDRatio,frac,fracLow,fracUp
 Chr1,646,-,5.55,0.996,0.874,0.998
 Chr1,803,-,1.55,0.768,0.718,0.809
 Chr1,941,+,2.01,1,0.875,1
