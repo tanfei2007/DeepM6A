@@ -1,4 +1,4 @@
-chr,coordinate,strand,IPD_ratio,methy_level,low_95,up_95
+chr,coordinate,strand,IPDRatio,frac,fracLow,fracUp
 chr2L,13487,-,3.11,1,0.757,1
 chr2L,16572,+,3.51,0.985,0.743,1
 chr2L,16885,+,3.2,1,0.794,1
