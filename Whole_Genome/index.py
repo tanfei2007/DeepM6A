@@ -12,7 +12,5 @@ def find_index(wg, ps):
   index = np.argsort(wg)
   sorted_wg = wg[index]
   sorted_index = np.searchsorted(sorted_wg, ps)
-
   ps_index = np.take(index, sorted_index, mode="clip")
-  
   return ps_index
