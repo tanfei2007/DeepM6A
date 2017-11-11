@@ -9,3 +9,7 @@ def find_index(wg, ps):
   sorted_index = np.searchsorted(sorted_wg, ps)
   ps_index = np.take(index, sorted_index, mode="clip")
   return ps_index
+
+
+#another solution:
+ps_index = np.where(np.in1d(wg, ps))[0]
