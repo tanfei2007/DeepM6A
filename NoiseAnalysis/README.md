@@ -31,3 +31,11 @@ fdr = 0.8
 | auc@roc| f1 score| precision |  recall | auc@pr|
 |--|--| -- | --| -- |
 | 0.999902375| 0.965071151358 | 1.0  | 0.9325 | |
+
+
+
+fdr = 0.9
+
+| auc@roc| f1 score| precision |  recall | auc@pr|
+|--|--| -- | --| -- |
+| 0.99952825375| 0.943475964078  | 0.893  |   | |
