@@ -57,3 +57,19 @@ fdr = 0.2
 | auc@roc| f1 score| precision |  recall | auc@pr|
 |--|--| -- | --| -- |
 |  | |  | | |
+
+
+
+## Patterns: XOR
+
+fdr = 0.1
+
+| auc@roc| f1 score| precision |  recall | auc@pr|
+|--|--| -- | --| -- |
+|  | |  | | |
+
+fdr = 0.2
+
+| auc@roc| f1 score| precision |  recall | auc@pr|
+|--|--| -- | --| -- |
+|  | |  | | |
