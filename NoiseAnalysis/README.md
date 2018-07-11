@@ -79,6 +79,13 @@ fdr = 0.8
 |   |   |    |1.0 | |
 
 
+fdr = 0.9
+
+| auc@roc| f1 score| precision |  recall | auc@pr|
+|--|--| -- | --| -- |
+|   |   |    |1.0 | |
+
+
 ## Patterns: XOR
 
 fdr = 0.1
