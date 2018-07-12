@@ -54,7 +54,7 @@ fdr = 0.9
 
 | auc@roc| f1 score| precision |  recall | auc@pr|
 |--|--| -- | --| -- |
-| |   |   |   | |
+|0.99958375 | 0.945626477541  |0.896860986547   |1.0   | |
 
 
 ## Patterns: TGCA
