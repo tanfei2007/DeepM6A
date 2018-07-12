@@ -105,7 +105,7 @@ fdr = 0
 
 | auc@roc| f1 score| precision |  recall | auc@pr|
 |--|--| -- | --| -- |
-|  | |  | | |
+| 1.0 | 1.0| 1.0 | 1.0| |
 
 
 fdr = 0.1
