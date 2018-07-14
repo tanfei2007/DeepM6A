@@ -11,3 +11,4 @@
 # second layer
 * v7 hidden=100, loss_val=0.27046
 * v8 hidden=50, loss_val=0.27961
+* v9 hidden=200, loss_val=0.27319
