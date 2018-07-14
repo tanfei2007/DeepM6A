@@ -1,2 +1,2 @@
 
-* v1 100 
+* v1 hidden=100, auc_val= 
