@@ -15,3 +15,4 @@
 
 # dropout rate based on 200/100
 * v10 rate=0.6, loss_val=0.26917
+* v11 rate=0.6, loss_val=0.27006
