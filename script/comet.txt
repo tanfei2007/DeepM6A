@@ -8,4 +8,4 @@ srun --partition=gpu-shared --pty --nodes=1 --ntasks-per-node=6 --gres=gpu:1 -t 
  
  module load singularity
  
- singularity shell /share/apps/gpu/singularity/images/keras/keras-tensorflow-gpu.simg
+ singularity shell /share/apps/gpu/singularity/images/keras/keras-theano-gpu.simg
