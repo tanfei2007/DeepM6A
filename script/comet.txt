@@ -1,0 +1,11 @@
+
+
+
+## comet 
+srun --partition=gpu-shared --pty --nodes=1 --ntasks-per-node=6 --gres=gpu:1 -t 00:30:00 --wait=0 --export=ALL /bin/bash
+
+ module purge
+ 
+ module load singularity
+ 
+ singularity shell /share/apps/gpu/singularity/images/keras/keras-tensorflow-gpu.simg
