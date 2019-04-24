@@ -1,3 +1,3 @@
 
 
-k-mer based Logistic regression
+k-mer based Logistic Regression
