@@ -1,0 +1,876 @@
+Using Theano backend.
+Using gpu device 0: Tesla K80 (CNMeM is enabled with initial size: 10.0% of memory, cuDNN 5005)
+loading data
+9
+(17047, 61, 4)
+('train_label: count', (array([0, 1]), array([8523, 8524])))
+('valid_label: count', (array([0, 1]), array([1065, 1063])))
+('test_label: count', (array([0, 1]), array([1065, 1063])))
+building model...............
+____________________________________________________________________________________________________
+Layer (type)                     Output Shape          Param #     Connected to                     
+====================================================================================================
+cov1 (Convolution1D)             (None, 58, 80)        1360        convolution1d_input_1[0][0]      
+____________________________________________________________________________________________________
+leakyrelu_1 (LeakyReLU)          (None, 58, 80)        0           cov1[0][0]                       
+____________________________________________________________________________________________________
+dropout_1 (Dropout)              (None, 58, 80)        0           leakyrelu_1[0][0]                
+____________________________________________________________________________________________________
+cov2 (Convolution1D)             (None, 57, 80)        12880       dropout_1[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_2 (LeakyReLU)          (None, 57, 80)        0           cov2[0][0]                       
+____________________________________________________________________________________________________
+dropout_2 (Dropout)              (None, 57, 80)        0           leakyrelu_2[0][0]                
+____________________________________________________________________________________________________
+cov3 (Convolution1D)             (None, 54, 80)        25680       dropout_2[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_3 (LeakyReLU)          (None, 54, 80)        0           cov3[0][0]                       
+____________________________________________________________________________________________________
+dropout_3 (Dropout)              (None, 54, 80)        0           leakyrelu_3[0][0]                
+____________________________________________________________________________________________________
+cov4 (Convolution1D)             (None, 51, 80)        25680       dropout_3[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_4 (LeakyReLU)          (None, 51, 80)        0           cov4[0][0]                       
+____________________________________________________________________________________________________
+dropout_4 (Dropout)              (None, 51, 80)        0           leakyrelu_4[0][0]                
+____________________________________________________________________________________________________
+cov5 (Convolution1D)             (None, 48, 80)        25680       dropout_4[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_5 (LeakyReLU)          (None, 48, 80)        0           cov5[0][0]                       
+____________________________________________________________________________________________________
+dropout_5 (Dropout)              (None, 48, 80)        0           leakyrelu_5[0][0]                
+____________________________________________________________________________________________________
+flatten_1 (Flatten)              (None, 3840)          0           dropout_5[0][0]                  
+____________________________________________________________________________________________________
+dense_1 (Dense)                  (None, 100)           384100      flatten_1[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_6 (LeakyReLU)          (None, 100)           0           dense_1[0][0]                    
+____________________________________________________________________________________________________
+dropout_6 (Dropout)              (None, 100)           0           leakyrelu_6[0][0]                
+____________________________________________________________________________________________________
+dense_2 (Dense)                  (None, 1)             101         dropout_6[0][0]                  
+____________________________________________________________________________________________________
+activation_1 (Activation)        (None, 1)             0           dense_2[0][0]                    
+====================================================================================================
+Total params: 475481
+____________________________________________________________________________________________________
+compiling and fitting model...........
+Train on 17047 samples, validate on 2128 samples
+Epoch 1/500
+Epoch 00000: val_loss improved from inf to 0.69322, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6932 - acc: 0.5023 - val_loss: 0.6932 - val_acc: 0.4995
+Epoch 2/500
+Epoch 00001: val_loss improved from 0.69322 to 0.69314, saving model to ./bestmodel9.hdf5
+3s - loss: 0.6933 - acc: 0.4929 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 3/500
+Epoch 00002: val_loss improved from 0.69314 to 0.69312, saving model to ./bestmodel9.hdf5
+3s - loss: 0.6932 - acc: 0.4935 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 4/500
+Epoch 00003: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4990 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 5/500
+Epoch 00004: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4965 - val_loss: 0.6932 - val_acc: 0.4995
+Epoch 6/500
+Epoch 00005: val_loss improved from 0.69312 to 0.69312, saving model to ./bestmodel9.hdf5
+4s - loss: 0.6932 - acc: 0.4991 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 7/500
+Epoch 00006: val_loss did not improve
+1s - loss: 0.6933 - acc: 0.4999 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 8/500
+Epoch 00007: val_loss did not improve
+1s - loss: 0.6931 - acc: 0.5005 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 9/500
+Epoch 00008: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.5040 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 10/500
+Epoch 00009: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4991 - val_loss: 0.6932 - val_acc: 0.5005
+Epoch 11/500
+Epoch 00010: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4989 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 12/500
+Epoch 00011: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4981 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 13/500
+Epoch 00012: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.5035 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 14/500
+Epoch 00013: val_loss did not improve
+1s - loss: 0.6931 - acc: 0.5047 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 15/500
+Epoch 00014: val_loss did not improve
+1s - loss: 0.6931 - acc: 0.5004 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 16/500
+Epoch 00015: val_loss did not improve
+1s - loss: 0.6931 - acc: 0.5006 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 17/500
+Epoch 00016: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.5014 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 18/500
+Epoch 00017: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.5031 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 19/500
+Epoch 00018: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.5005 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 20/500
+Epoch 00019: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.5017 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 21/500
+Epoch 00020: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4970 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 22/500
+Epoch 00021: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4980 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 23/500
+Epoch 00022: val_loss did not improve
+1s - loss: 0.6933 - acc: 0.5002 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 24/500
+Epoch 00023: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4966 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 25/500
+Epoch 00024: val_loss improved from 0.69312 to 0.69312, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6930 - acc: 0.5065 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 26/500
+Epoch 00025: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4998 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 27/500
+Epoch 00026: val_loss improved from 0.69312 to 0.69312, saving model to ./bestmodel9.hdf5
+1s - loss: 0.6931 - acc: 0.5016 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 28/500
+Epoch 00027: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4945 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 29/500
+Epoch 00028: val_loss improved from 0.69312 to 0.69311, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6932 - acc: 0.4996 - val_loss: 0.6931 - val_acc: 0.6480
+Epoch 30/500
+Epoch 00029: val_loss improved from 0.69311 to 0.69311, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6933 - acc: 0.4983 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 31/500
+Epoch 00030: val_loss improved from 0.69311 to 0.69310, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6932 - acc: 0.4990 - val_loss: 0.6931 - val_acc: 0.5005
+Epoch 32/500
+Epoch 00031: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.5034 - val_loss: 0.6932 - val_acc: 0.4995
+Epoch 33/500
+Epoch 00032: val_loss did not improve
+1s - loss: 0.6933 - acc: 0.4955 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 34/500
+Epoch 00033: val_loss did not improve
+1s - loss: 0.6932 - acc: 0.4985 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 35/500
+Epoch 00034: val_loss did not improve
+1s - loss: 0.6931 - acc: 0.4996 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 36/500
+Epoch 00035: val_loss improved from 0.69310 to 0.69308, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6932 - acc: 0.4985 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 37/500
+Epoch 00036: val_loss improved from 0.69308 to 0.69306, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6931 - acc: 0.5038 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 38/500
+Epoch 00037: val_loss improved from 0.69306 to 0.69305, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6931 - acc: 0.5047 - val_loss: 0.6931 - val_acc: 0.4995
+Epoch 39/500
+Epoch 00038: val_loss improved from 0.69305 to 0.69302, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6931 - acc: 0.5101 - val_loss: 0.6930 - val_acc: 0.4995
+Epoch 40/500
+Epoch 00039: val_loss improved from 0.69302 to 0.69298, saving model to ./bestmodel9.hdf5
+3s - loss: 0.6930 - acc: 0.5105 - val_loss: 0.6930 - val_acc: 0.5005
+Epoch 41/500
+Epoch 00040: val_loss improved from 0.69298 to 0.69296, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6931 - acc: 0.5044 - val_loss: 0.6930 - val_acc: 0.5000
+Epoch 42/500
+Epoch 00041: val_loss improved from 0.69296 to 0.69296, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6931 - acc: 0.5075 - val_loss: 0.6930 - val_acc: 0.5005
+Epoch 43/500
+Epoch 00042: val_loss improved from 0.69296 to 0.69290, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6930 - acc: 0.5047 - val_loss: 0.6929 - val_acc: 0.5573
+Epoch 44/500
+Epoch 00043: val_loss improved from 0.69290 to 0.69288, saving model to ./bestmodel9.hdf5
+3s - loss: 0.6930 - acc: 0.5068 - val_loss: 0.6929 - val_acc: 0.5005
+Epoch 45/500
+Epoch 00044: val_loss improved from 0.69288 to 0.69275, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6930 - acc: 0.5082 - val_loss: 0.6927 - val_acc: 0.7444
+Epoch 46/500
+Epoch 00045: val_loss improved from 0.69275 to 0.69266, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6928 - acc: 0.5144 - val_loss: 0.6927 - val_acc: 0.4995
+Epoch 47/500
+Epoch 00046: val_loss improved from 0.69266 to 0.69238, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6927 - acc: 0.5207 - val_loss: 0.6924 - val_acc: 0.5545
+Epoch 48/500
+Epoch 00047: val_loss improved from 0.69238 to 0.69188, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6923 - acc: 0.5328 - val_loss: 0.6919 - val_acc: 0.7321
+Epoch 49/500
+Epoch 00048: val_loss improved from 0.69188 to 0.69079, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6917 - acc: 0.5509 - val_loss: 0.6908 - val_acc: 0.5028
+Epoch 50/500
+Epoch 00049: val_loss improved from 0.69079 to 0.68564, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6893 - acc: 0.5924 - val_loss: 0.6856 - val_acc: 0.7289
+Epoch 51/500
+Epoch 00050: val_loss improved from 0.68564 to 0.64525, saving model to ./bestmodel9.hdf5
+2s - loss: 0.6759 - acc: 0.6616 - val_loss: 0.6452 - val_acc: 0.7307
+Epoch 52/500
+Epoch 00051: val_loss improved from 0.64525 to 0.51788, saving model to ./bestmodel9.hdf5
+3s - loss: 0.5735 - acc: 0.7304 - val_loss: 0.5179 - val_acc: 0.7608
+Epoch 53/500
+Epoch 00052: val_loss improved from 0.51788 to 0.48697, saving model to ./bestmodel9.hdf5
+2s - loss: 0.5076 - acc: 0.7675 - val_loss: 0.4870 - val_acc: 0.7810
+Epoch 54/500
+Epoch 00053: val_loss improved from 0.48697 to 0.45582, saving model to ./bestmodel9.hdf5
+2s - loss: 0.4732 - acc: 0.7891 - val_loss: 0.4558 - val_acc: 0.7998
+Epoch 55/500
+Epoch 00054: val_loss improved from 0.45582 to 0.42711, saving model to ./bestmodel9.hdf5
+2s - loss: 0.4427 - acc: 0.8109 - val_loss: 0.4271 - val_acc: 0.8125
+Epoch 56/500
+Epoch 00055: val_loss improved from 0.42711 to 0.41219, saving model to ./bestmodel9.hdf5
+2s - loss: 0.4207 - acc: 0.8218 - val_loss: 0.4122 - val_acc: 0.8242
+Epoch 57/500
+Epoch 00056: val_loss improved from 0.41219 to 0.40136, saving model to ./bestmodel9.hdf5
+2s - loss: 0.4034 - acc: 0.8315 - val_loss: 0.4014 - val_acc: 0.8266
+Epoch 58/500
+Epoch 00057: val_loss improved from 0.40136 to 0.39328, saving model to ./bestmodel9.hdf5
+2s - loss: 0.3862 - acc: 0.8390 - val_loss: 0.3933 - val_acc: 0.8280
+Epoch 59/500
+Epoch 00058: val_loss improved from 0.39328 to 0.38333, saving model to ./bestmodel9.hdf5
+2s - loss: 0.3766 - acc: 0.8463 - val_loss: 0.3833 - val_acc: 0.8379
+Epoch 60/500
+Epoch 00059: val_loss did not improve
+1s - loss: 0.3706 - acc: 0.8501 - val_loss: 0.3882 - val_acc: 0.8308
+Epoch 61/500
+Epoch 00060: val_loss improved from 0.38333 to 0.38221, saving model to ./bestmodel9.hdf5
+2s - loss: 0.3601 - acc: 0.8549 - val_loss: 0.3822 - val_acc: 0.8383
+Epoch 62/500
+Epoch 00061: val_loss improved from 0.38221 to 0.36288, saving model to ./bestmodel9.hdf5
+3s - loss: 0.3579 - acc: 0.8553 - val_loss: 0.3629 - val_acc: 0.8548
+Epoch 63/500
+Epoch 00062: val_loss did not improve
+1s - loss: 0.3484 - acc: 0.8585 - val_loss: 0.3698 - val_acc: 0.8506
+Epoch 64/500
+Epoch 00063: val_loss did not improve
+1s - loss: 0.3422 - acc: 0.8616 - val_loss: 0.3639 - val_acc: 0.8562
+Epoch 65/500
+Epoch 00064: val_loss improved from 0.36288 to 0.35505, saving model to ./bestmodel9.hdf5
+2s - loss: 0.3387 - acc: 0.8637 - val_loss: 0.3550 - val_acc: 0.8553
+Epoch 66/500
+Epoch 00065: val_loss did not improve
+1s - loss: 0.3361 - acc: 0.8644 - val_loss: 0.3604 - val_acc: 0.8459
+Epoch 67/500
+Epoch 00066: val_loss improved from 0.35505 to 0.34636, saving model to ./bestmodel9.hdf5
+2s - loss: 0.3274 - acc: 0.8692 - val_loss: 0.3464 - val_acc: 0.8562
+Epoch 68/500
+Epoch 00067: val_loss did not improve
+1s - loss: 0.3283 - acc: 0.8695 - val_loss: 0.3465 - val_acc: 0.8609
+Epoch 69/500
+Epoch 00068: val_loss improved from 0.34636 to 0.34145, saving model to ./bestmodel9.hdf5
+3s - loss: 0.3221 - acc: 0.8727 - val_loss: 0.3415 - val_acc: 0.8553
+Epoch 70/500
+Epoch 00069: val_loss improved from 0.34145 to 0.33935, saving model to ./bestmodel9.hdf5
+2s - loss: 0.3151 - acc: 0.8761 - val_loss: 0.3394 - val_acc: 0.8576
+Epoch 71/500
+Epoch 00070: val_loss improved from 0.33935 to 0.33575, saving model to ./bestmodel9.hdf5
+3s - loss: 0.3148 - acc: 0.8766 - val_loss: 0.3358 - val_acc: 0.8600
+Epoch 72/500
+Epoch 00071: val_loss did not improve
+1s - loss: 0.3116 - acc: 0.8790 - val_loss: 0.3394 - val_acc: 0.8571
+Epoch 73/500
+Epoch 00072: val_loss improved from 0.33575 to 0.32601, saving model to ./bestmodel9.hdf5
+2s - loss: 0.3075 - acc: 0.8786 - val_loss: 0.3260 - val_acc: 0.8600
+Epoch 74/500
+Epoch 00073: val_loss did not improve
+1s - loss: 0.3086 - acc: 0.8780 - val_loss: 0.3356 - val_acc: 0.8562
+Epoch 75/500
+Epoch 00074: val_loss did not improve
+1s - loss: 0.3034 - acc: 0.8814 - val_loss: 0.3277 - val_acc: 0.8590
+Epoch 76/500
+Epoch 00075: val_loss did not improve
+1s - loss: 0.3022 - acc: 0.8811 - val_loss: 0.3318 - val_acc: 0.8651
+Epoch 77/500
+Epoch 00076: val_loss improved from 0.32601 to 0.32431, saving model to ./bestmodel9.hdf5
+2s - loss: 0.3034 - acc: 0.8805 - val_loss: 0.3243 - val_acc: 0.8600
+Epoch 78/500
+Epoch 00077: val_loss improved from 0.32431 to 0.32067, saving model to ./bestmodel9.hdf5
+3s - loss: 0.2960 - acc: 0.8834 - val_loss: 0.3207 - val_acc: 0.8703
+Epoch 79/500
+Epoch 00078: val_loss improved from 0.32067 to 0.31632, saving model to ./bestmodel9.hdf5
+3s - loss: 0.2966 - acc: 0.8829 - val_loss: 0.3163 - val_acc: 0.8717
+Epoch 80/500
+Epoch 00079: val_loss did not improve
+1s - loss: 0.2906 - acc: 0.8856 - val_loss: 0.3216 - val_acc: 0.8614
+Epoch 81/500
+Epoch 00080: val_loss improved from 0.31632 to 0.31619, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2909 - acc: 0.8881 - val_loss: 0.3162 - val_acc: 0.8708
+Epoch 82/500
+Epoch 00081: val_loss improved from 0.31619 to 0.31137, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2903 - acc: 0.8863 - val_loss: 0.3114 - val_acc: 0.8722
+Epoch 83/500
+Epoch 00082: val_loss improved from 0.31137 to 0.30728, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2843 - acc: 0.8897 - val_loss: 0.3073 - val_acc: 0.8783
+Epoch 84/500
+Epoch 00083: val_loss improved from 0.30728 to 0.30515, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2875 - acc: 0.8898 - val_loss: 0.3051 - val_acc: 0.8783
+Epoch 85/500
+Epoch 00084: val_loss did not improve
+1s - loss: 0.2827 - acc: 0.8901 - val_loss: 0.3119 - val_acc: 0.8759
+Epoch 86/500
+Epoch 00085: val_loss did not improve
+1s - loss: 0.2805 - acc: 0.8892 - val_loss: 0.3054 - val_acc: 0.8764
+Epoch 87/500
+Epoch 00086: val_loss did not improve
+1s - loss: 0.2778 - acc: 0.8929 - val_loss: 0.3073 - val_acc: 0.8750
+Epoch 88/500
+Epoch 00087: val_loss did not improve
+1s - loss: 0.2794 - acc: 0.8907 - val_loss: 0.3173 - val_acc: 0.8736
+Epoch 89/500
+Epoch 00088: val_loss did not improve
+1s - loss: 0.2777 - acc: 0.8911 - val_loss: 0.3069 - val_acc: 0.8773
+Epoch 90/500
+Epoch 00089: val_loss did not improve
+1s - loss: 0.2739 - acc: 0.8957 - val_loss: 0.3155 - val_acc: 0.8741
+Epoch 91/500
+Epoch 00090: val_loss did not improve
+1s - loss: 0.2733 - acc: 0.8938 - val_loss: 0.3071 - val_acc: 0.8745
+Epoch 92/500
+Epoch 00091: val_loss did not improve
+1s - loss: 0.2708 - acc: 0.8959 - val_loss: 0.3060 - val_acc: 0.8741
+Epoch 93/500
+Epoch 00092: val_loss improved from 0.30515 to 0.29926, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2659 - acc: 0.8970 - val_loss: 0.2993 - val_acc: 0.8783
+Epoch 94/500
+Epoch 00093: val_loss did not improve
+1s - loss: 0.2685 - acc: 0.8942 - val_loss: 0.3064 - val_acc: 0.8759
+Epoch 95/500
+Epoch 00094: val_loss did not improve
+1s - loss: 0.2642 - acc: 0.8972 - val_loss: 0.3071 - val_acc: 0.8755
+Epoch 96/500
+Epoch 00095: val_loss did not improve
+1s - loss: 0.2652 - acc: 0.8978 - val_loss: 0.3063 - val_acc: 0.8769
+Epoch 97/500
+Epoch 00096: val_loss did not improve
+1s - loss: 0.2593 - acc: 0.9002 - val_loss: 0.3019 - val_acc: 0.8769
+Epoch 98/500
+Epoch 00097: val_loss did not improve
+1s - loss: 0.2594 - acc: 0.8989 - val_loss: 0.3052 - val_acc: 0.8769
+Epoch 99/500
+Epoch 00098: val_loss improved from 0.29926 to 0.29783, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2568 - acc: 0.8997 - val_loss: 0.2978 - val_acc: 0.8825
+Epoch 100/500
+Epoch 00099: val_loss did not improve
+1s - loss: 0.2573 - acc: 0.9010 - val_loss: 0.2993 - val_acc: 0.8825
+Epoch 101/500
+Epoch 00100: val_loss improved from 0.29783 to 0.29429, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2542 - acc: 0.9004 - val_loss: 0.2943 - val_acc: 0.8825
+Epoch 102/500
+Epoch 00101: val_loss improved from 0.29429 to 0.29312, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2523 - acc: 0.9043 - val_loss: 0.2931 - val_acc: 0.8820
+Epoch 103/500
+Epoch 00102: val_loss did not improve
+1s - loss: 0.2521 - acc: 0.9048 - val_loss: 0.2947 - val_acc: 0.8830
+Epoch 104/500
+Epoch 00103: val_loss did not improve
+1s - loss: 0.2493 - acc: 0.9030 - val_loss: 0.3000 - val_acc: 0.8816
+Epoch 105/500
+Epoch 00104: val_loss did not improve
+1s - loss: 0.2471 - acc: 0.9063 - val_loss: 0.3031 - val_acc: 0.8773
+Epoch 106/500
+Epoch 00105: val_loss improved from 0.29312 to 0.28766, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2492 - acc: 0.9040 - val_loss: 0.2877 - val_acc: 0.8896
+Epoch 107/500
+Epoch 00106: val_loss did not improve
+1s - loss: 0.2442 - acc: 0.9076 - val_loss: 0.2969 - val_acc: 0.8825
+Epoch 108/500
+Epoch 00107: val_loss did not improve
+1s - loss: 0.2421 - acc: 0.9063 - val_loss: 0.2919 - val_acc: 0.8867
+Epoch 109/500
+Epoch 00108: val_loss did not improve
+1s - loss: 0.2416 - acc: 0.9054 - val_loss: 0.2965 - val_acc: 0.8853
+Epoch 110/500
+Epoch 00109: val_loss did not improve
+1s - loss: 0.2426 - acc: 0.9081 - val_loss: 0.2920 - val_acc: 0.8853
+Epoch 111/500
+Epoch 00110: val_loss did not improve
+1s - loss: 0.2391 - acc: 0.9087 - val_loss: 0.2930 - val_acc: 0.8872
+Epoch 112/500
+Epoch 00111: val_loss improved from 0.28766 to 0.28730, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2419 - acc: 0.9053 - val_loss: 0.2873 - val_acc: 0.8882
+Epoch 113/500
+Epoch 00112: val_loss improved from 0.28730 to 0.28638, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2348 - acc: 0.9091 - val_loss: 0.2864 - val_acc: 0.8844
+Epoch 114/500
+Epoch 00113: val_loss improved from 0.28638 to 0.28341, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2365 - acc: 0.9097 - val_loss: 0.2834 - val_acc: 0.8905
+Epoch 115/500
+Epoch 00114: val_loss did not improve
+1s - loss: 0.2313 - acc: 0.9122 - val_loss: 0.2856 - val_acc: 0.8900
+Epoch 116/500
+Epoch 00115: val_loss improved from 0.28341 to 0.28008, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2318 - acc: 0.9100 - val_loss: 0.2801 - val_acc: 0.8924
+Epoch 117/500
+Epoch 00116: val_loss did not improve
+1s - loss: 0.2294 - acc: 0.9137 - val_loss: 0.2839 - val_acc: 0.8929
+Epoch 118/500
+Epoch 00117: val_loss did not improve
+1s - loss: 0.2265 - acc: 0.9134 - val_loss: 0.2817 - val_acc: 0.8938
+Epoch 119/500
+Epoch 00118: val_loss improved from 0.28008 to 0.27916, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2278 - acc: 0.9129 - val_loss: 0.2792 - val_acc: 0.8938
+Epoch 120/500
+Epoch 00119: val_loss did not improve
+1s - loss: 0.2256 - acc: 0.9154 - val_loss: 0.2868 - val_acc: 0.8905
+Epoch 121/500
+Epoch 00120: val_loss did not improve
+1s - loss: 0.2251 - acc: 0.9115 - val_loss: 0.2831 - val_acc: 0.8947
+Epoch 122/500
+Epoch 00121: val_loss improved from 0.27916 to 0.27575, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2225 - acc: 0.9158 - val_loss: 0.2757 - val_acc: 0.8924
+Epoch 123/500
+Epoch 00122: val_loss did not improve
+1s - loss: 0.2239 - acc: 0.9134 - val_loss: 0.2787 - val_acc: 0.8952
+Epoch 124/500
+Epoch 00123: val_loss did not improve
+1s - loss: 0.2237 - acc: 0.9160 - val_loss: 0.2794 - val_acc: 0.8943
+Epoch 125/500
+Epoch 00124: val_loss did not improve
+1s - loss: 0.2199 - acc: 0.9162 - val_loss: 0.2859 - val_acc: 0.8985
+Epoch 126/500
+Epoch 00125: val_loss improved from 0.27575 to 0.27433, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2212 - acc: 0.9163 - val_loss: 0.2743 - val_acc: 0.9008
+Epoch 127/500
+Epoch 00126: val_loss did not improve
+1s - loss: 0.2184 - acc: 0.9149 - val_loss: 0.2809 - val_acc: 0.8952
+Epoch 128/500
+Epoch 00127: val_loss did not improve
+1s - loss: 0.2175 - acc: 0.9183 - val_loss: 0.2750 - val_acc: 0.8980
+Epoch 129/500
+Epoch 00128: val_loss did not improve
+1s - loss: 0.2206 - acc: 0.9166 - val_loss: 0.2769 - val_acc: 0.8980
+Epoch 130/500
+Epoch 00129: val_loss did not improve
+1s - loss: 0.2195 - acc: 0.9172 - val_loss: 0.2762 - val_acc: 0.8976
+Epoch 131/500
+Epoch 00130: val_loss improved from 0.27433 to 0.27262, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2157 - acc: 0.9179 - val_loss: 0.2726 - val_acc: 0.9008
+Epoch 132/500
+Epoch 00131: val_loss did not improve
+1s - loss: 0.2154 - acc: 0.9181 - val_loss: 0.2778 - val_acc: 0.9004
+Epoch 133/500
+Epoch 00132: val_loss improved from 0.27262 to 0.26847, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2181 - acc: 0.9174 - val_loss: 0.2685 - val_acc: 0.9027
+Epoch 134/500
+Epoch 00133: val_loss did not improve
+1s - loss: 0.2157 - acc: 0.9162 - val_loss: 0.2728 - val_acc: 0.9013
+Epoch 135/500
+Epoch 00134: val_loss did not improve
+1s - loss: 0.2140 - acc: 0.9200 - val_loss: 0.2770 - val_acc: 0.8980
+Epoch 136/500
+Epoch 00135: val_loss did not improve
+1s - loss: 0.2137 - acc: 0.9179 - val_loss: 0.2743 - val_acc: 0.8971
+Epoch 137/500
+Epoch 00136: val_loss did not improve
+1s - loss: 0.2105 - acc: 0.9196 - val_loss: 0.2724 - val_acc: 0.9013
+Epoch 138/500
+Epoch 00137: val_loss did not improve
+1s - loss: 0.2113 - acc: 0.9224 - val_loss: 0.2755 - val_acc: 0.8957
+Epoch 139/500
+Epoch 00138: val_loss did not improve
+1s - loss: 0.2112 - acc: 0.9213 - val_loss: 0.2790 - val_acc: 0.8933
+Epoch 140/500
+Epoch 00139: val_loss did not improve
+1s - loss: 0.2134 - acc: 0.9176 - val_loss: 0.2703 - val_acc: 0.8994
+Epoch 141/500
+Epoch 00140: val_loss did not improve
+1s - loss: 0.2113 - acc: 0.9233 - val_loss: 0.2696 - val_acc: 0.9018
+Epoch 142/500
+Epoch 00141: val_loss did not improve
+1s - loss: 0.2083 - acc: 0.9217 - val_loss: 0.2709 - val_acc: 0.8999
+Epoch 143/500
+Epoch 00142: val_loss did not improve
+1s - loss: 0.2041 - acc: 0.9224 - val_loss: 0.2750 - val_acc: 0.8961
+Epoch 144/500
+Epoch 00143: val_loss did not improve
+1s - loss: 0.2040 - acc: 0.9226 - val_loss: 0.2734 - val_acc: 0.8990
+Epoch 145/500
+Epoch 00144: val_loss did not improve
+1s - loss: 0.2050 - acc: 0.9238 - val_loss: 0.2712 - val_acc: 0.8976
+Epoch 146/500
+Epoch 00145: val_loss did not improve
+1s - loss: 0.2108 - acc: 0.9198 - val_loss: 0.2690 - val_acc: 0.9008
+Epoch 147/500
+Epoch 00146: val_loss improved from 0.26847 to 0.26701, saving model to ./bestmodel9.hdf5
+2s - loss: 0.2045 - acc: 0.9254 - val_loss: 0.2670 - val_acc: 0.9004
+Epoch 148/500
+Epoch 00147: val_loss did not improve
+1s - loss: 0.2034 - acc: 0.9228 - val_loss: 0.2702 - val_acc: 0.8957
+Epoch 149/500
+Epoch 00148: val_loss did not improve
+1s - loss: 0.2054 - acc: 0.9216 - val_loss: 0.2677 - val_acc: 0.9008
+Epoch 150/500
+Epoch 00149: val_loss did not improve
+1s - loss: 0.2037 - acc: 0.9220 - val_loss: 0.2751 - val_acc: 0.8976
+Epoch 151/500
+Epoch 00150: val_loss did not improve
+1s - loss: 0.2018 - acc: 0.9246 - val_loss: 0.2678 - val_acc: 0.8961
+Epoch 152/500
+Epoch 00151: val_loss did not improve
+1s - loss: 0.2028 - acc: 0.9222 - val_loss: 0.2776 - val_acc: 0.8957
+Epoch 153/500
+Epoch 00152: val_loss did not improve
+1s - loss: 0.2050 - acc: 0.9242 - val_loss: 0.2730 - val_acc: 0.8961
+Epoch 154/500
+Epoch 00153: val_loss did not improve
+1s - loss: 0.2011 - acc: 0.9247 - val_loss: 0.2700 - val_acc: 0.8952
+Epoch 155/500
+Epoch 00154: val_loss did not improve
+1s - loss: 0.2001 - acc: 0.9239 - val_loss: 0.2740 - val_acc: 0.8952
+Epoch 156/500
+Epoch 00155: val_loss did not improve
+1s - loss: 0.2012 - acc: 0.9235 - val_loss: 0.2744 - val_acc: 0.8980
+Epoch 157/500
+Epoch 00156: val_loss did not improve
+1s - loss: 0.1992 - acc: 0.9264 - val_loss: 0.2777 - val_acc: 0.9004
+Epoch 158/500
+Epoch 00157: val_loss did not improve
+1s - loss: 0.1979 - acc: 0.9261 - val_loss: 0.2785 - val_acc: 0.8957
+Epoch 159/500
+Epoch 00158: val_loss did not improve
+1s - loss: 0.1981 - acc: 0.9251 - val_loss: 0.2685 - val_acc: 0.8971
+Epoch 160/500
+Epoch 00159: val_loss did not improve
+1s - loss: 0.1966 - acc: 0.9280 - val_loss: 0.2780 - val_acc: 0.8961
+Epoch 161/500
+Epoch 00160: val_loss did not improve
+1s - loss: 0.2001 - acc: 0.9256 - val_loss: 0.2740 - val_acc: 0.8980
+Epoch 162/500
+Epoch 00161: val_loss did not improve
+1s - loss: 0.1966 - acc: 0.9272 - val_loss: 0.2731 - val_acc: 0.9004
+Epoch 163/500
+Epoch 00162: val_loss did not improve
+1s - loss: 0.1976 - acc: 0.9259 - val_loss: 0.2713 - val_acc: 0.8980
+Epoch 164/500
+Epoch 00163: val_loss did not improve
+1s - loss: 0.1941 - acc: 0.9283 - val_loss: 0.2708 - val_acc: 0.8980
+Epoch 165/500
+Epoch 00164: val_loss did not improve
+1s - loss: 0.1982 - acc: 0.9260 - val_loss: 0.2672 - val_acc: 0.8952
+Epoch 166/500
+Epoch 00165: val_loss did not improve
+1s - loss: 0.1936 - acc: 0.9273 - val_loss: 0.2676 - val_acc: 0.9004
+Epoch 167/500
+Epoch 00166: val_loss did not improve
+1s - loss: 0.1913 - acc: 0.9279 - val_loss: 0.2734 - val_acc: 0.8971
+Epoch 168/500
+Epoch 00167: val_loss did not improve
+1s - loss: 0.1961 - acc: 0.9260 - val_loss: 0.2699 - val_acc: 0.9004
+Epoch 169/500
+Epoch 00168: val_loss did not improve
+1s - loss: 0.1964 - acc: 0.9273 - val_loss: 0.2743 - val_acc: 0.8999
+Epoch 170/500
+Epoch 00169: val_loss did not improve
+1s - loss: 0.1922 - acc: 0.9282 - val_loss: 0.2677 - val_acc: 0.9023
+Epoch 171/500
+Epoch 00170: val_loss did not improve
+1s - loss: 0.1929 - acc: 0.9263 - val_loss: 0.2752 - val_acc: 0.8976
+Epoch 172/500
+Epoch 00171: val_loss did not improve
+1s - loss: 0.1977 - acc: 0.9258 - val_loss: 0.2695 - val_acc: 0.9023
+Epoch 173/500
+Epoch 00172: val_loss improved from 0.26701 to 0.26600, saving model to ./bestmodel9.hdf5
+3s - loss: 0.1923 - acc: 0.9304 - val_loss: 0.2660 - val_acc: 0.8999
+Epoch 174/500
+Epoch 00173: val_loss did not improve
+1s - loss: 0.1923 - acc: 0.9292 - val_loss: 0.2679 - val_acc: 0.8957
+Epoch 175/500
+Epoch 00174: val_loss did not improve
+1s - loss: 0.1911 - acc: 0.9284 - val_loss: 0.2700 - val_acc: 0.8957
+Epoch 176/500
+Epoch 00175: val_loss did not improve
+1s - loss: 0.1897 - acc: 0.9295 - val_loss: 0.2716 - val_acc: 0.8985
+Epoch 177/500
+Epoch 00176: val_loss did not improve
+1s - loss: 0.1922 - acc: 0.9280 - val_loss: 0.2669 - val_acc: 0.9013
+Epoch 178/500
+Epoch 00177: val_loss did not improve
+1s - loss: 0.1881 - acc: 0.9288 - val_loss: 0.2722 - val_acc: 0.8985
+Epoch 179/500
+Epoch 00178: val_loss did not improve
+1s - loss: 0.1871 - acc: 0.9298 - val_loss: 0.2676 - val_acc: 0.8990
+Epoch 180/500
+Epoch 00179: val_loss did not improve
+1s - loss: 0.1865 - acc: 0.9303 - val_loss: 0.2848 - val_acc: 0.8957
+Epoch 181/500
+Epoch 00180: val_loss did not improve
+1s - loss: 0.1853 - acc: 0.9310 - val_loss: 0.2769 - val_acc: 0.8961
+Epoch 182/500
+Epoch 00181: val_loss did not improve
+1s - loss: 0.1888 - acc: 0.9309 - val_loss: 0.2674 - val_acc: 0.9018
+Epoch 183/500
+Epoch 00182: val_loss did not improve
+1s - loss: 0.1846 - acc: 0.9310 - val_loss: 0.2696 - val_acc: 0.8999
+Epoch 184/500
+Epoch 00183: val_loss did not improve
+1s - loss: 0.1872 - acc: 0.9305 - val_loss: 0.2719 - val_acc: 0.9004
+Epoch 185/500
+Epoch 00184: val_loss did not improve
+1s - loss: 0.1847 - acc: 0.9317 - val_loss: 0.2864 - val_acc: 0.8943
+Epoch 186/500
+Epoch 00185: val_loss did not improve
+1s - loss: 0.1870 - acc: 0.9308 - val_loss: 0.2694 - val_acc: 0.8994
+Epoch 187/500
+Epoch 00186: val_loss did not improve
+1s - loss: 0.1848 - acc: 0.9312 - val_loss: 0.2700 - val_acc: 0.8990
+Epoch 188/500
+Epoch 00187: val_loss did not improve
+1s - loss: 0.1827 - acc: 0.9328 - val_loss: 0.2769 - val_acc: 0.8976
+Epoch 189/500
+Epoch 00188: val_loss did not improve
+1s - loss: 0.1849 - acc: 0.9294 - val_loss: 0.2695 - val_acc: 0.8985
+Epoch 190/500
+Epoch 00189: val_loss did not improve
+1s - loss: 0.1835 - acc: 0.9311 - val_loss: 0.2725 - val_acc: 0.9004
+Epoch 191/500
+Epoch 00190: val_loss did not improve
+1s - loss: 0.1805 - acc: 0.9326 - val_loss: 0.2685 - val_acc: 0.9013
+Epoch 192/500
+Epoch 00191: val_loss did not improve
+1s - loss: 0.1823 - acc: 0.9314 - val_loss: 0.2715 - val_acc: 0.8994
+Epoch 193/500
+Epoch 00192: val_loss did not improve
+1s - loss: 0.1828 - acc: 0.9312 - val_loss: 0.2665 - val_acc: 0.9004
+Epoch 194/500
+Epoch 00193: val_loss did not improve
+1s - loss: 0.1815 - acc: 0.9312 - val_loss: 0.2682 - val_acc: 0.9013
+Epoch 195/500
+Epoch 00194: val_loss did not improve
+1s - loss: 0.1797 - acc: 0.9338 - val_loss: 0.2732 - val_acc: 0.9008
+Epoch 196/500
+Epoch 00195: val_loss did not improve
+1s - loss: 0.1797 - acc: 0.9341 - val_loss: 0.2798 - val_acc: 0.8961
+Epoch 197/500
+Epoch 00196: val_loss did not improve
+1s - loss: 0.1802 - acc: 0.9344 - val_loss: 0.2674 - val_acc: 0.9027
+Epoch 198/500
+Epoch 00197: val_loss did not improve
+1s - loss: 0.1806 - acc: 0.9323 - val_loss: 0.2705 - val_acc: 0.8994
+Epoch 199/500
+Epoch 00198: val_loss did not improve
+1s - loss: 0.1795 - acc: 0.9334 - val_loss: 0.2742 - val_acc: 0.8985
+Epoch 200/500
+Epoch 00199: val_loss improved from 0.26600 to 0.26241, saving model to ./bestmodel9.hdf5
+2s - loss: 0.1841 - acc: 0.9312 - val_loss: 0.2624 - val_acc: 0.9027
+Epoch 201/500
+Epoch 00200: val_loss did not improve
+1s - loss: 0.1770 - acc: 0.9339 - val_loss: 0.2712 - val_acc: 0.9023
+Epoch 202/500
+Epoch 00201: val_loss did not improve
+1s - loss: 0.1797 - acc: 0.9335 - val_loss: 0.2702 - val_acc: 0.9004
+Epoch 203/500
+Epoch 00202: val_loss did not improve
+1s - loss: 0.1743 - acc: 0.9343 - val_loss: 0.2733 - val_acc: 0.9018
+Epoch 204/500
+Epoch 00203: val_loss did not improve
+1s - loss: 0.1748 - acc: 0.9355 - val_loss: 0.2815 - val_acc: 0.9023
+Epoch 205/500
+Epoch 00204: val_loss did not improve
+1s - loss: 0.1779 - acc: 0.9324 - val_loss: 0.2679 - val_acc: 0.9004
+Epoch 206/500
+Epoch 00205: val_loss did not improve
+1s - loss: 0.1763 - acc: 0.9350 - val_loss: 0.2766 - val_acc: 0.8980
+Epoch 207/500
+Epoch 00206: val_loss did not improve
+1s - loss: 0.1760 - acc: 0.9351 - val_loss: 0.2716 - val_acc: 0.9004
+Epoch 208/500
+Epoch 00207: val_loss did not improve
+1s - loss: 0.1755 - acc: 0.9350 - val_loss: 0.2765 - val_acc: 0.8999
+Epoch 209/500
+Epoch 00208: val_loss did not improve
+1s - loss: 0.1776 - acc: 0.9324 - val_loss: 0.2751 - val_acc: 0.9013
+Epoch 210/500
+Epoch 00209: val_loss did not improve
+1s - loss: 0.1742 - acc: 0.9352 - val_loss: 0.2735 - val_acc: 0.9008
+Epoch 211/500
+Epoch 00210: val_loss did not improve
+1s - loss: 0.1772 - acc: 0.9345 - val_loss: 0.2797 - val_acc: 0.9013
+Epoch 212/500
+Epoch 00211: val_loss did not improve
+1s - loss: 0.1799 - acc: 0.9314 - val_loss: 0.2735 - val_acc: 0.9018
+Epoch 213/500
+Epoch 00212: val_loss did not improve
+1s - loss: 0.1724 - acc: 0.9365 - val_loss: 0.2721 - val_acc: 0.9004
+Epoch 214/500
+Epoch 00213: val_loss did not improve
+1s - loss: 0.1782 - acc: 0.9335 - val_loss: 0.2718 - val_acc: 0.9041
+Epoch 215/500
+Epoch 00214: val_loss did not improve
+1s - loss: 0.1750 - acc: 0.9348 - val_loss: 0.2708 - val_acc: 0.9023
+Epoch 216/500
+Epoch 00215: val_loss did not improve
+1s - loss: 0.1728 - acc: 0.9356 - val_loss: 0.2753 - val_acc: 0.9008
+Epoch 217/500
+Epoch 00216: val_loss did not improve
+1s - loss: 0.1749 - acc: 0.9341 - val_loss: 0.2695 - val_acc: 0.9004
+Epoch 218/500
+Epoch 00217: val_loss did not improve
+1s - loss: 0.1714 - acc: 0.9352 - val_loss: 0.2719 - val_acc: 0.9055
+Epoch 219/500
+Epoch 00218: val_loss did not improve
+1s - loss: 0.1705 - acc: 0.9364 - val_loss: 0.2807 - val_acc: 0.9032
+Epoch 220/500
+Epoch 00219: val_loss did not improve
+1s - loss: 0.1709 - acc: 0.9367 - val_loss: 0.2714 - val_acc: 0.9013
+Epoch 221/500
+Epoch 00220: val_loss did not improve
+1s - loss: 0.1717 - acc: 0.9369 - val_loss: 0.2745 - val_acc: 0.9023
+Epoch 222/500
+Epoch 00221: val_loss did not improve
+1s - loss: 0.1713 - acc: 0.9355 - val_loss: 0.2828 - val_acc: 0.9004
+Epoch 223/500
+Epoch 00222: val_loss did not improve
+1s - loss: 0.1726 - acc: 0.9360 - val_loss: 0.2801 - val_acc: 0.8971
+Epoch 224/500
+Epoch 00223: val_loss did not improve
+1s - loss: 0.1710 - acc: 0.9369 - val_loss: 0.2756 - val_acc: 0.9037
+Epoch 225/500
+Epoch 00224: val_loss did not improve
+1s - loss: 0.1693 - acc: 0.9373 - val_loss: 0.2843 - val_acc: 0.9027
+Epoch 226/500
+Epoch 00225: val_loss did not improve
+1s - loss: 0.1684 - acc: 0.9367 - val_loss: 0.2802 - val_acc: 0.9060
+Epoch 227/500
+Epoch 00226: val_loss did not improve
+1s - loss: 0.1681 - acc: 0.9368 - val_loss: 0.2783 - val_acc: 0.9023
+Epoch 228/500
+Epoch 00227: val_loss did not improve
+1s - loss: 0.1676 - acc: 0.9360 - val_loss: 0.2761 - val_acc: 0.9041
+Epoch 229/500
+Epoch 00228: val_loss did not improve
+1s - loss: 0.1686 - acc: 0.9366 - val_loss: 0.2707 - val_acc: 0.9032
+Epoch 230/500
+Epoch 00229: val_loss did not improve
+1s - loss: 0.1674 - acc: 0.9394 - val_loss: 0.2779 - val_acc: 0.9051
+Epoch 231/500
+Epoch 00230: val_loss did not improve
+1s - loss: 0.1645 - acc: 0.9376 - val_loss: 0.2747 - val_acc: 0.9060
+Epoch 232/500
+Epoch 00231: val_loss did not improve
+1s - loss: 0.1683 - acc: 0.9389 - val_loss: 0.2791 - val_acc: 0.9032
+Epoch 233/500
+Epoch 00232: val_loss did not improve
+1s - loss: 0.1686 - acc: 0.9373 - val_loss: 0.2768 - val_acc: 0.9013
+Epoch 234/500
+Epoch 00233: val_loss did not improve
+1s - loss: 0.1681 - acc: 0.9359 - val_loss: 0.2743 - val_acc: 0.9070
+Epoch 235/500
+Epoch 00234: val_loss did not improve
+1s - loss: 0.1658 - acc: 0.9378 - val_loss: 0.2731 - val_acc: 0.9041
+Epoch 236/500
+Epoch 00235: val_loss did not improve
+1s - loss: 0.1604 - acc: 0.9426 - val_loss: 0.2842 - val_acc: 0.8994
+Epoch 237/500
+Epoch 00236: val_loss did not improve
+1s - loss: 0.1652 - acc: 0.9386 - val_loss: 0.2804 - val_acc: 0.9027
+Epoch 238/500
+Epoch 00237: val_loss did not improve
+1s - loss: 0.1663 - acc: 0.9375 - val_loss: 0.2783 - val_acc: 0.9055
+Epoch 239/500
+Epoch 00238: val_loss did not improve
+1s - loss: 0.1682 - acc: 0.9375 - val_loss: 0.2799 - val_acc: 0.8994
+Epoch 240/500
+Epoch 00239: val_loss did not improve
+1s - loss: 0.1678 - acc: 0.9385 - val_loss: 0.2768 - val_acc: 0.9013
+Epoch 241/500
+Epoch 00240: val_loss did not improve
+1s - loss: 0.1644 - acc: 0.9392 - val_loss: 0.2873 - val_acc: 0.9013
+Epoch 242/500
+Epoch 00241: val_loss did not improve
+1s - loss: 0.1608 - acc: 0.9393 - val_loss: 0.2729 - val_acc: 0.9013
+Epoch 243/500
+Epoch 00242: val_loss did not improve
+1s - loss: 0.1634 - acc: 0.9401 - val_loss: 0.2780 - val_acc: 0.8999
+Epoch 244/500
+Epoch 00243: val_loss did not improve
+1s - loss: 0.1628 - acc: 0.9413 - val_loss: 0.2762 - val_acc: 0.9032
+Epoch 245/500
+Epoch 00244: val_loss did not improve
+1s - loss: 0.1631 - acc: 0.9385 - val_loss: 0.2788 - val_acc: 0.9037
+Epoch 246/500
+Epoch 00245: val_loss did not improve
+1s - loss: 0.1653 - acc: 0.9376 - val_loss: 0.2774 - val_acc: 0.9018
+Epoch 247/500
+Epoch 00246: val_loss did not improve
+1s - loss: 0.1660 - acc: 0.9383 - val_loss: 0.2810 - val_acc: 0.9013
+Epoch 248/500
+Epoch 00247: val_loss did not improve
+1s - loss: 0.1633 - acc: 0.9382 - val_loss: 0.2746 - val_acc: 0.9032
+Epoch 249/500
+Epoch 00248: val_loss did not improve
+1s - loss: 0.1623 - acc: 0.9409 - val_loss: 0.2720 - val_acc: 0.9055
+Epoch 250/500
+Epoch 00249: val_loss did not improve
+1s - loss: 0.1609 - acc: 0.9405 - val_loss: 0.2804 - val_acc: 0.9037
+Epoch 251/500
+Epoch 00250: val_loss did not improve
+Epoch 00250: early stopping
+1s - loss: 0.1604 - acc: 0.9401 - val_loss: 0.2734 - val_acc: 0.9046
+training done!
+____________________________________________________________________________________________________
+Layer (type)                     Output Shape          Param #     Connected to                     
+====================================================================================================
+cov1 (Convolution1D)             (None, 58, 80)        1360        convolution1d_input_2[0][0]      
+____________________________________________________________________________________________________
+leakyrelu_1 (LeakyReLU)          (None, 58, 80)        0           cov1[0][0]                       
+____________________________________________________________________________________________________
+dropout_1 (Dropout)              (None, 58, 80)        0           leakyrelu_1[0][0]                
+____________________________________________________________________________________________________
+cov2 (Convolution1D)             (None, 57, 80)        12880       dropout_1[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_2 (LeakyReLU)          (None, 57, 80)        0           cov2[0][0]                       
+____________________________________________________________________________________________________
+dropout_2 (Dropout)              (None, 57, 80)        0           leakyrelu_2[0][0]                
+____________________________________________________________________________________________________
+cov3 (Convolution1D)             (None, 54, 80)        25680       dropout_2[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_3 (LeakyReLU)          (None, 54, 80)        0           cov3[0][0]                       
+____________________________________________________________________________________________________
+dropout_3 (Dropout)              (None, 54, 80)        0           leakyrelu_3[0][0]                
+____________________________________________________________________________________________________
+cov4 (Convolution1D)             (None, 51, 80)        25680       dropout_3[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_4 (LeakyReLU)          (None, 51, 80)        0           cov4[0][0]                       
+____________________________________________________________________________________________________
+dropout_4 (Dropout)              (None, 51, 80)        0           leakyrelu_4[0][0]                
+____________________________________________________________________________________________________
+cov5 (Convolution1D)             (None, 48, 80)        25680       dropout_4[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_5 (LeakyReLU)          (None, 48, 80)        0           cov5[0][0]                       
+____________________________________________________________________________________________________
+dropout_5 (Dropout)              (None, 48, 80)        0           leakyrelu_5[0][0]                
+____________________________________________________________________________________________________
+flatten_1 (Flatten)              (None, 3840)          0           dropout_5[0][0]                  
+____________________________________________________________________________________________________
+dense_1 (Dense)                  (None, 100)           384100      flatten_1[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_6 (LeakyReLU)          (None, 100)           0           dense_1[0][0]                    
+____________________________________________________________________________________________________
+dropout_6 (Dropout)              (None, 100)           0           leakyrelu_6[0][0]                
+____________________________________________________________________________________________________
+dense_2 (Dense)                  (None, 1)             101         dropout_6[0][0]                  
+____________________________________________________________________________________________________
+activation_1 (Activation)        (None, 1)             0           dense_2[0][0]                    
+====================================================================================================
+Total params: 475481
+____________________________________________________________________________________________________
+**************vadiation results on validation dataset************
+  32/2128 [..............................] - ETA: 0s 128/2128 [>.............................] - ETA: 0s 224/2128 [==>...........................] - ETA: 0s 320/2128 [===>..........................] - ETA: 0s 416/2128 [====>.........................] - ETA: 0s 512/2128 [======>.......................] - ETA: 0s 608/2128 [=======>......................] - ETA: 0s 704/2128 [========>.....................] - ETA: 0s 800/2128 [==========>...................] - ETA: 0s 896/2128 [===========>..................] - ETA: 0s 992/2128 [============>.................] - ETA: 0s1088/2128 [==============>...............] - ETA: 0s1184/2128 [===============>..............] - ETA: 0s1280/2128 [=================>............] - ETA: 0s1376/2128 [==================>...........] - ETA: 0s1472/2128 [===================>..........] - ETA: 0s1568/2128 [=====================>........] - ETA: 0s1664/2128 [======================>.......] - ETA: 0s1760/2128 [=======================>......] - ETA: 0s1856/2128 [=========================>....] - ETA: 0s1952/2128 [==========================>...] - ETA: 0s2048/2128 [===========================>..] - ETA: 0s[0.26240531301924158, 0.90272556390977443]
+  32/2128 [..............................] - ETA: 0s 160/2128 [=>............................] - ETA: 0s 288/2128 [===>..........................] - ETA: 0s 416/2128 [====>.........................] - ETA: 0s 544/2128 [======>.......................] - ETA: 0s 672/2128 [========>.....................] - ETA: 0s 800/2128 [==========>...................] - ETA: 0s 928/2128 [============>.................] - ETA: 0s1056/2128 [=============>................] - ETA: 0s1184/2128 [===============>..............] - ETA: 0s1312/2128 [=================>............] - ETA: 0s1440/2128 [===================>..........] - ETA: 0s1568/2128 [=====================>........] - ETA: 0s1696/2128 [======================>.......] - ETA: 0s1824/2128 [========================>.....] - ETA: 0s1952/2128 [==========================>...] - ETA: 0s2080/2128 [============================>.] - ETA: 0s  32/2128 [..............................] - ETA: 0s 160/2128 [=>............................] - ETA: 0s 288/2128 [===>..........................] - ETA: 0s 416/2128 [====>.........................] - ETA: 0s 544/2128 [======>.......................] - ETA: 0s 672/2128 [========>.....................] - ETA: 0s 800/2128 [==========>...................] - ETA: 0s 928/2128 [============>.................] - ETA: 0s1056/2128 [=============>................] - ETA: 0s1184/2128 [===============>..............] - ETA: 0s1312/2128 [=================>............] - ETA: 0s1440/2128 [===================>..........] - ETA: 0s1568/2128 [=====================>........] - ETA: 0s1696/2128 [======================>.......] - ETA: 0s1824/2128 [========================>.....] - ETA: 0s1952/2128 [==========================>...] - ETA: 0s2080/2128 [============================>.] - ETA: 0s************************
+auc: 0.955675981256
+mcc: 0.806855903527
+negative ---> precision:0.880319148936, recall:0.932394366197, f1score:0.90560875513, support:1065
+positive ---> precision:0.928, recall:0.873000940734, f1score:0.899660688318, support:1063
+************************
+**************prediction results on test dataset************
+  32/2131 [..............................] - ETA: 0s 160/2131 [=>............................] - ETA: 0s 288/2131 [===>..........................] - ETA: 0s 416/2131 [====>.........................] - ETA: 0s 544/2131 [======>.......................] - ETA: 0s 672/2131 [========>.....................] - ETA: 0s 800/2131 [==========>...................] - ETA: 0s 928/2131 [============>.................] - ETA: 0s1056/2131 [=============>................] - ETA: 0s1184/2131 [===============>..............] - ETA: 0s1312/2131 [=================>............] - ETA: 0s1440/2131 [===================>..........] - ETA: 0s1568/2131 [=====================>........] - ETA: 0s1696/2131 [======================>.......] - ETA: 0s1824/2131 [========================>.....] - ETA: 0s1952/2131 [==========================>...] - ETA: 0s2080/2131 [============================>.] - ETA: 0s[0.36584633430059615, 0.85405912703049125]
+  32/2131 [..............................] - ETA: 0s 192/2131 [=>............................] - ETA: 0s 352/2131 [===>..........................] - ETA: 0s 512/2131 [======>.......................] - ETA: 0s 672/2131 [========>.....................] - ETA: 0s 832/2131 [==========>...................] - ETA: 0s 992/2131 [============>.................] - ETA: 0s1152/2131 [===============>..............] - ETA: 0s1312/2131 [=================>............] - ETA: 0s1472/2131 [===================>..........] - ETA: 0s1632/2131 [=====================>........] - ETA: 0s1792/2131 [========================>.....] - ETA: 0s1952/2131 [==========================>...] - ETA: 0s2112/2131 [============================>.] - ETA: 0s  32/2131 [..............................] - ETA: 0s 192/2131 [=>............................] - ETA: 0s 352/2131 [===>..........................] - ETA: 0s 512/2131 [======>.......................] - ETA: 0s 672/2131 [========>.....................] - ETA: 0s 832/2131 [==========>...................] - ETA: 0s 992/2131 [============>.................] - ETA: 0s1152/2131 [===============>..............] - ETA: 0s1312/2131 [=================>............] - ETA: 0s1472/2131 [===================>..........] - ETA: 0s1632/2131 [=====================>........] - ETA: 0s1792/2131 [========================>.....] - ETA: 0s1952/2131 [==========================>...] - ETA: 0s2112/2131 [============================>.] - ETA: 0s************************
+auc: 0.927860722811
+mcc: 0.716362952636
+negative ---> precision:0.807504078303, recall:0.929577464789, f1score:0.864251418595, support:1065
+positive ---> precision:0.917127071823, recall:0.77861163227, f1score:0.842212075089, support:1066
+************************
