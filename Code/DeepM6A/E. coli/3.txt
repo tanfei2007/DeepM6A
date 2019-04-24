@@ -1,0 +1,919 @@
+Using Theano backend.
+Using gpu device 0: Tesla K80 (CNMeM is enabled with initial size: 10.0% of memory, cuDNN 5005)
+loading data
+3
+(53920, 61, 4)
+('train_label: count', (array([0, 1]), array([26960, 26960])))
+('valid_label: count', (array([0, 1]), array([3370, 3370])))
+('test_label: count', (array([0, 1]), array([3370, 3370])))
+building model...............
+____________________________________________________________________________________________________
+Layer (type)                     Output Shape          Param #     Connected to                     
+====================================================================================================
+cov1 (Convolution1D)             (None, 58, 80)        1360        convolution1d_input_1[0][0]      
+____________________________________________________________________________________________________
+leakyrelu_1 (LeakyReLU)          (None, 58, 80)        0           cov1[0][0]                       
+____________________________________________________________________________________________________
+dropout_1 (Dropout)              (None, 58, 80)        0           leakyrelu_1[0][0]                
+____________________________________________________________________________________________________
+cov2 (Convolution1D)             (None, 57, 80)        12880       dropout_1[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_2 (LeakyReLU)          (None, 57, 80)        0           cov2[0][0]                       
+____________________________________________________________________________________________________
+dropout_2 (Dropout)              (None, 57, 80)        0           leakyrelu_2[0][0]                
+____________________________________________________________________________________________________
+cov3 (Convolution1D)             (None, 54, 80)        25680       dropout_2[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_3 (LeakyReLU)          (None, 54, 80)        0           cov3[0][0]                       
+____________________________________________________________________________________________________
+dropout_3 (Dropout)              (None, 54, 80)        0           leakyrelu_3[0][0]                
+____________________________________________________________________________________________________
+cov4 (Convolution1D)             (None, 51, 80)        25680       dropout_3[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_4 (LeakyReLU)          (None, 51, 80)        0           cov4[0][0]                       
+____________________________________________________________________________________________________
+dropout_4 (Dropout)              (None, 51, 80)        0           leakyrelu_4[0][0]                
+____________________________________________________________________________________________________
+cov5 (Convolution1D)             (None, 48, 80)        25680       dropout_4[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_5 (LeakyReLU)          (None, 48, 80)        0           cov5[0][0]                       
+____________________________________________________________________________________________________
+dropout_5 (Dropout)              (None, 48, 80)        0           leakyrelu_5[0][0]                
+____________________________________________________________________________________________________
+flatten_1 (Flatten)              (None, 3840)          0           dropout_5[0][0]                  
+____________________________________________________________________________________________________
+dense_1 (Dense)                  (None, 100)           384100      flatten_1[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_6 (LeakyReLU)          (None, 100)           0           dense_1[0][0]                    
+____________________________________________________________________________________________________
+dropout_6 (Dropout)              (None, 100)           0           leakyrelu_6[0][0]                
+____________________________________________________________________________________________________
+dense_2 (Dense)                  (None, 1)             101         dropout_6[0][0]                  
+____________________________________________________________________________________________________
+activation_1 (Activation)        (None, 1)             0           dense_2[0][0]                    
+====================================================================================================
+Total params: 475481
+____________________________________________________________________________________________________
+compiling and fitting model...........
+Train on 53920 samples, validate on 6740 samples
+Epoch 1/500
+Epoch 00000: val_loss improved from inf to 0.69312, saving model to ./bestmodel3.hdf5
+7s - loss: 0.6932 - acc: 0.4985 - val_loss: 0.6931 - val_acc: 0.5000
+Epoch 2/500
+Epoch 00001: val_loss improved from 0.69312 to 0.69310, saving model to ./bestmodel3.hdf5
+6s - loss: 0.6932 - acc: 0.4997 - val_loss: 0.6931 - val_acc: 0.5000
+Epoch 3/500
+Epoch 00002: val_loss improved from 0.69310 to 0.69308, saving model to ./bestmodel3.hdf5
+8s - loss: 0.6932 - acc: 0.5004 - val_loss: 0.6931 - val_acc: 0.5000
+Epoch 4/500
+Epoch 00003: val_loss did not improve
+5s - loss: 0.6932 - acc: 0.5038 - val_loss: 0.6931 - val_acc: 0.5000
+Epoch 5/500
+Epoch 00004: val_loss improved from 0.69308 to 0.69301, saving model to ./bestmodel3.hdf5
+6s - loss: 0.6931 - acc: 0.5028 - val_loss: 0.6930 - val_acc: 0.5000
+Epoch 6/500
+Epoch 00005: val_loss improved from 0.69301 to 0.69299, saving model to ./bestmodel3.hdf5
+6s - loss: 0.6931 - acc: 0.5034 - val_loss: 0.6930 - val_acc: 0.5000
+Epoch 7/500
+Epoch 00006: val_loss improved from 0.69299 to 0.69283, saving model to ./bestmodel3.hdf5
+6s - loss: 0.6930 - acc: 0.5055 - val_loss: 0.6928 - val_acc: 0.5042
+Epoch 8/500
+Epoch 00007: val_loss improved from 0.69283 to 0.69219, saving model to ./bestmodel3.hdf5
+6s - loss: 0.6927 - acc: 0.5168 - val_loss: 0.6922 - val_acc: 0.5000
+Epoch 9/500
+Epoch 00008: val_loss improved from 0.69219 to 0.68751, saving model to ./bestmodel3.hdf5
+6s - loss: 0.6911 - acc: 0.5420 - val_loss: 0.6875 - val_acc: 0.8122
+Epoch 10/500
+Epoch 00009: val_loss improved from 0.68751 to 0.16494, saving model to ./bestmodel3.hdf5
+6s - loss: 0.5649 - acc: 0.7519 - val_loss: 0.1649 - val_acc: 0.9579
+Epoch 11/500
+Epoch 00010: val_loss improved from 0.16494 to 0.04633, saving model to ./bestmodel3.hdf5
+7s - loss: 0.1068 - acc: 0.9725 - val_loss: 0.0463 - val_acc: 0.9837
+Epoch 12/500
+Epoch 00011: val_loss improved from 0.04633 to 0.02673, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0458 - acc: 0.9869 - val_loss: 0.0267 - val_acc: 0.9944
+Epoch 13/500
+Epoch 00012: val_loss improved from 0.02673 to 0.02475, saving model to ./bestmodel3.hdf5
+8s - loss: 0.0354 - acc: 0.9909 - val_loss: 0.0247 - val_acc: 0.9958
+Epoch 14/500
+Epoch 00013: val_loss improved from 0.02475 to 0.02416, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0307 - acc: 0.9921 - val_loss: 0.0242 - val_acc: 0.9961
+Epoch 15/500
+Epoch 00014: val_loss improved from 0.02416 to 0.02321, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0296 - acc: 0.9924 - val_loss: 0.0232 - val_acc: 0.9966
+Epoch 16/500
+Epoch 00015: val_loss improved from 0.02321 to 0.02293, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0293 - acc: 0.9925 - val_loss: 0.0229 - val_acc: 0.9964
+Epoch 17/500
+Epoch 00016: val_loss improved from 0.02293 to 0.02265, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0266 - acc: 0.9937 - val_loss: 0.0227 - val_acc: 0.9972
+Epoch 18/500
+Epoch 00017: val_loss improved from 0.02265 to 0.02157, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0261 - acc: 0.9937 - val_loss: 0.0216 - val_acc: 0.9969
+Epoch 19/500
+Epoch 00018: val_loss improved from 0.02157 to 0.02148, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0250 - acc: 0.9942 - val_loss: 0.0215 - val_acc: 0.9966
+Epoch 20/500
+Epoch 00019: val_loss improved from 0.02148 to 0.02118, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0253 - acc: 0.9944 - val_loss: 0.0212 - val_acc: 0.9970
+Epoch 21/500
+Epoch 00020: val_loss improved from 0.02118 to 0.02065, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0241 - acc: 0.9944 - val_loss: 0.0207 - val_acc: 0.9969
+Epoch 22/500
+Epoch 00021: val_loss improved from 0.02065 to 0.02040, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0240 - acc: 0.9945 - val_loss: 0.0204 - val_acc: 0.9966
+Epoch 23/500
+Epoch 00022: val_loss did not improve
+5s - loss: 0.0235 - acc: 0.9948 - val_loss: 0.0205 - val_acc: 0.9973
+Epoch 24/500
+Epoch 00023: val_loss improved from 0.02040 to 0.02034, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0236 - acc: 0.9948 - val_loss: 0.0203 - val_acc: 0.9967
+Epoch 25/500
+Epoch 00024: val_loss improved from 0.02034 to 0.01998, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0227 - acc: 0.9950 - val_loss: 0.0200 - val_acc: 0.9970
+Epoch 26/500
+Epoch 00025: val_loss did not improve
+5s - loss: 0.0221 - acc: 0.9953 - val_loss: 0.0202 - val_acc: 0.9972
+Epoch 27/500
+Epoch 00026: val_loss improved from 0.01998 to 0.01984, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0219 - acc: 0.9952 - val_loss: 0.0198 - val_acc: 0.9967
+Epoch 28/500
+Epoch 00027: val_loss improved from 0.01984 to 0.01976, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0217 - acc: 0.9952 - val_loss: 0.0198 - val_acc: 0.9972
+Epoch 29/500
+Epoch 00028: val_loss improved from 0.01976 to 0.01933, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0212 - acc: 0.9958 - val_loss: 0.0193 - val_acc: 0.9970
+Epoch 30/500
+Epoch 00029: val_loss did not improve
+5s - loss: 0.0213 - acc: 0.9953 - val_loss: 0.0197 - val_acc: 0.9966
+Epoch 31/500
+Epoch 00030: val_loss did not improve
+5s - loss: 0.0208 - acc: 0.9955 - val_loss: 0.0199 - val_acc: 0.9969
+Epoch 32/500
+Epoch 00031: val_loss did not improve
+5s - loss: 0.0206 - acc: 0.9957 - val_loss: 0.0199 - val_acc: 0.9972
+Epoch 33/500
+Epoch 00032: val_loss did not improve
+5s - loss: 0.0210 - acc: 0.9956 - val_loss: 0.0194 - val_acc: 0.9967
+Epoch 34/500
+Epoch 00033: val_loss improved from 0.01933 to 0.01909, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0197 - acc: 0.9962 - val_loss: 0.0191 - val_acc: 0.9972
+Epoch 35/500
+Epoch 00034: val_loss did not improve
+5s - loss: 0.0194 - acc: 0.9960 - val_loss: 0.0192 - val_acc: 0.9972
+Epoch 36/500
+Epoch 00035: val_loss improved from 0.01909 to 0.01895, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0203 - acc: 0.9956 - val_loss: 0.0190 - val_acc: 0.9970
+Epoch 37/500
+Epoch 00036: val_loss improved from 0.01895 to 0.01884, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0200 - acc: 0.9957 - val_loss: 0.0188 - val_acc: 0.9970
+Epoch 38/500
+Epoch 00037: val_loss did not improve
+5s - loss: 0.0195 - acc: 0.9958 - val_loss: 0.0196 - val_acc: 0.9967
+Epoch 39/500
+Epoch 00038: val_loss did not improve
+5s - loss: 0.0195 - acc: 0.9958 - val_loss: 0.0189 - val_acc: 0.9973
+Epoch 40/500
+Epoch 00039: val_loss did not improve
+5s - loss: 0.0195 - acc: 0.9961 - val_loss: 0.0190 - val_acc: 0.9969
+Epoch 41/500
+Epoch 00040: val_loss improved from 0.01884 to 0.01857, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0191 - acc: 0.9963 - val_loss: 0.0186 - val_acc: 0.9972
+Epoch 42/500
+Epoch 00041: val_loss did not improve
+5s - loss: 0.0192 - acc: 0.9961 - val_loss: 0.0187 - val_acc: 0.9969
+Epoch 43/500
+Epoch 00042: val_loss did not improve
+5s - loss: 0.0190 - acc: 0.9960 - val_loss: 0.0188 - val_acc: 0.9969
+Epoch 44/500
+Epoch 00043: val_loss did not improve
+5s - loss: 0.0189 - acc: 0.9962 - val_loss: 0.0195 - val_acc: 0.9967
+Epoch 45/500
+Epoch 00044: val_loss did not improve
+5s - loss: 0.0190 - acc: 0.9962 - val_loss: 0.0187 - val_acc: 0.9972
+Epoch 46/500
+Epoch 00045: val_loss did not improve
+5s - loss: 0.0189 - acc: 0.9962 - val_loss: 0.0188 - val_acc: 0.9970
+Epoch 47/500
+Epoch 00046: val_loss improved from 0.01857 to 0.01827, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0187 - acc: 0.9965 - val_loss: 0.0183 - val_acc: 0.9972
+Epoch 48/500
+Epoch 00047: val_loss did not improve
+5s - loss: 0.0185 - acc: 0.9963 - val_loss: 0.0186 - val_acc: 0.9972
+Epoch 49/500
+Epoch 00048: val_loss did not improve
+5s - loss: 0.0187 - acc: 0.9963 - val_loss: 0.0190 - val_acc: 0.9972
+Epoch 50/500
+Epoch 00049: val_loss did not improve
+5s - loss: 0.0184 - acc: 0.9964 - val_loss: 0.0186 - val_acc: 0.9970
+Epoch 51/500
+Epoch 00050: val_loss did not improve
+5s - loss: 0.0188 - acc: 0.9964 - val_loss: 0.0187 - val_acc: 0.9972
+Epoch 52/500
+Epoch 00051: val_loss did not improve
+5s - loss: 0.0186 - acc: 0.9962 - val_loss: 0.0187 - val_acc: 0.9972
+Epoch 53/500
+Epoch 00052: val_loss did not improve
+5s - loss: 0.0175 - acc: 0.9966 - val_loss: 0.0189 - val_acc: 0.9967
+Epoch 54/500
+Epoch 00053: val_loss did not improve
+5s - loss: 0.0184 - acc: 0.9962 - val_loss: 0.0186 - val_acc: 0.9975
+Epoch 55/500
+Epoch 00054: val_loss did not improve
+5s - loss: 0.0177 - acc: 0.9964 - val_loss: 0.0189 - val_acc: 0.9970
+Epoch 56/500
+Epoch 00055: val_loss did not improve
+5s - loss: 0.0180 - acc: 0.9965 - val_loss: 0.0184 - val_acc: 0.9969
+Epoch 57/500
+Epoch 00056: val_loss did not improve
+5s - loss: 0.0173 - acc: 0.9967 - val_loss: 0.0183 - val_acc: 0.9973
+Epoch 58/500
+Epoch 00057: val_loss improved from 0.01827 to 0.01823, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0176 - acc: 0.9964 - val_loss: 0.0182 - val_acc: 0.9972
+Epoch 59/500
+Epoch 00058: val_loss did not improve
+5s - loss: 0.0176 - acc: 0.9967 - val_loss: 0.0185 - val_acc: 0.9969
+Epoch 60/500
+Epoch 00059: val_loss did not improve
+5s - loss: 0.0168 - acc: 0.9969 - val_loss: 0.0188 - val_acc: 0.9967
+Epoch 61/500
+Epoch 00060: val_loss improved from 0.01823 to 0.01810, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0180 - acc: 0.9962 - val_loss: 0.0181 - val_acc: 0.9970
+Epoch 62/500
+Epoch 00061: val_loss did not improve
+5s - loss: 0.0168 - acc: 0.9965 - val_loss: 0.0185 - val_acc: 0.9967
+Epoch 63/500
+Epoch 00062: val_loss did not improve
+5s - loss: 0.0173 - acc: 0.9969 - val_loss: 0.0185 - val_acc: 0.9964
+Epoch 64/500
+Epoch 00063: val_loss did not improve
+5s - loss: 0.0171 - acc: 0.9966 - val_loss: 0.0183 - val_acc: 0.9975
+Epoch 65/500
+Epoch 00064: val_loss did not improve
+5s - loss: 0.0173 - acc: 0.9967 - val_loss: 0.0185 - val_acc: 0.9969
+Epoch 66/500
+Epoch 00065: val_loss did not improve
+5s - loss: 0.0166 - acc: 0.9966 - val_loss: 0.0188 - val_acc: 0.9966
+Epoch 67/500
+Epoch 00066: val_loss did not improve
+5s - loss: 0.0173 - acc: 0.9967 - val_loss: 0.0189 - val_acc: 0.9972
+Epoch 68/500
+Epoch 00067: val_loss did not improve
+5s - loss: 0.0174 - acc: 0.9965 - val_loss: 0.0183 - val_acc: 0.9966
+Epoch 69/500
+Epoch 00068: val_loss did not improve
+5s - loss: 0.0165 - acc: 0.9967 - val_loss: 0.0188 - val_acc: 0.9963
+Epoch 70/500
+Epoch 00069: val_loss improved from 0.01810 to 0.01781, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0166 - acc: 0.9966 - val_loss: 0.0178 - val_acc: 0.9966
+Epoch 71/500
+Epoch 00070: val_loss improved from 0.01781 to 0.01780, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0167 - acc: 0.9968 - val_loss: 0.0178 - val_acc: 0.9972
+Epoch 72/500
+Epoch 00071: val_loss did not improve
+5s - loss: 0.0168 - acc: 0.9966 - val_loss: 0.0179 - val_acc: 0.9966
+Epoch 73/500
+Epoch 00072: val_loss did not improve
+5s - loss: 0.0164 - acc: 0.9967 - val_loss: 0.0180 - val_acc: 0.9970
+Epoch 74/500
+Epoch 00073: val_loss did not improve
+5s - loss: 0.0163 - acc: 0.9968 - val_loss: 0.0180 - val_acc: 0.9972
+Epoch 75/500
+Epoch 00074: val_loss improved from 0.01780 to 0.01769, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0158 - acc: 0.9968 - val_loss: 0.0177 - val_acc: 0.9972
+Epoch 76/500
+Epoch 00075: val_loss did not improve
+5s - loss: 0.0165 - acc: 0.9965 - val_loss: 0.0182 - val_acc: 0.9972
+Epoch 77/500
+Epoch 00076: val_loss did not improve
+5s - loss: 0.0162 - acc: 0.9968 - val_loss: 0.0183 - val_acc: 0.9966
+Epoch 78/500
+Epoch 00077: val_loss did not improve
+5s - loss: 0.0167 - acc: 0.9968 - val_loss: 0.0182 - val_acc: 0.9969
+Epoch 79/500
+Epoch 00078: val_loss did not improve
+5s - loss: 0.0154 - acc: 0.9967 - val_loss: 0.0181 - val_acc: 0.9969
+Epoch 80/500
+Epoch 00079: val_loss did not improve
+5s - loss: 0.0158 - acc: 0.9968 - val_loss: 0.0182 - val_acc: 0.9966
+Epoch 81/500
+Epoch 00080: val_loss did not improve
+5s - loss: 0.0156 - acc: 0.9969 - val_loss: 0.0182 - val_acc: 0.9964
+Epoch 82/500
+Epoch 00081: val_loss did not improve
+5s - loss: 0.0157 - acc: 0.9968 - val_loss: 0.0186 - val_acc: 0.9966
+Epoch 83/500
+Epoch 00082: val_loss improved from 0.01769 to 0.01758, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0156 - acc: 0.9968 - val_loss: 0.0176 - val_acc: 0.9973
+Epoch 84/500
+Epoch 00083: val_loss did not improve
+5s - loss: 0.0155 - acc: 0.9970 - val_loss: 0.0184 - val_acc: 0.9963
+Epoch 85/500
+Epoch 00084: val_loss did not improve
+5s - loss: 0.0162 - acc: 0.9968 - val_loss: 0.0179 - val_acc: 0.9972
+Epoch 86/500
+Epoch 00085: val_loss did not improve
+5s - loss: 0.0155 - acc: 0.9969 - val_loss: 0.0181 - val_acc: 0.9963
+Epoch 87/500
+Epoch 00086: val_loss did not improve
+5s - loss: 0.0151 - acc: 0.9971 - val_loss: 0.0179 - val_acc: 0.9967
+Epoch 88/500
+Epoch 00087: val_loss improved from 0.01758 to 0.01747, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0159 - acc: 0.9968 - val_loss: 0.0175 - val_acc: 0.9972
+Epoch 89/500
+Epoch 00088: val_loss did not improve
+5s - loss: 0.0161 - acc: 0.9968 - val_loss: 0.0178 - val_acc: 0.9969
+Epoch 90/500
+Epoch 00089: val_loss did not improve
+5s - loss: 0.0159 - acc: 0.9968 - val_loss: 0.0179 - val_acc: 0.9975
+Epoch 91/500
+Epoch 00090: val_loss did not improve
+5s - loss: 0.0153 - acc: 0.9969 - val_loss: 0.0177 - val_acc: 0.9972
+Epoch 92/500
+Epoch 00091: val_loss did not improve
+5s - loss: 0.0154 - acc: 0.9968 - val_loss: 0.0175 - val_acc: 0.9970
+Epoch 93/500
+Epoch 00092: val_loss did not improve
+5s - loss: 0.0149 - acc: 0.9967 - val_loss: 0.0177 - val_acc: 0.9972
+Epoch 94/500
+Epoch 00093: val_loss improved from 0.01747 to 0.01728, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0151 - acc: 0.9969 - val_loss: 0.0173 - val_acc: 0.9972
+Epoch 95/500
+Epoch 00094: val_loss did not improve
+5s - loss: 0.0145 - acc: 0.9972 - val_loss: 0.0177 - val_acc: 0.9969
+Epoch 96/500
+Epoch 00095: val_loss did not improve
+5s - loss: 0.0153 - acc: 0.9968 - val_loss: 0.0175 - val_acc: 0.9972
+Epoch 97/500
+Epoch 00096: val_loss did not improve
+5s - loss: 0.0150 - acc: 0.9970 - val_loss: 0.0176 - val_acc: 0.9972
+Epoch 98/500
+Epoch 00097: val_loss did not improve
+5s - loss: 0.0157 - acc: 0.9969 - val_loss: 0.0178 - val_acc: 0.9966
+Epoch 99/500
+Epoch 00098: val_loss did not improve
+5s - loss: 0.0148 - acc: 0.9970 - val_loss: 0.0176 - val_acc: 0.9972
+Epoch 100/500
+Epoch 00099: val_loss did not improve
+5s - loss: 0.0151 - acc: 0.9970 - val_loss: 0.0177 - val_acc: 0.9972
+Epoch 101/500
+Epoch 00100: val_loss did not improve
+5s - loss: 0.0145 - acc: 0.9969 - val_loss: 0.0181 - val_acc: 0.9967
+Epoch 102/500
+Epoch 00101: val_loss did not improve
+5s - loss: 0.0142 - acc: 0.9971 - val_loss: 0.0181 - val_acc: 0.9973
+Epoch 103/500
+Epoch 00102: val_loss did not improve
+5s - loss: 0.0147 - acc: 0.9971 - val_loss: 0.0179 - val_acc: 0.9972
+Epoch 104/500
+Epoch 00103: val_loss did not improve
+5s - loss: 0.0148 - acc: 0.9970 - val_loss: 0.0176 - val_acc: 0.9966
+Epoch 105/500
+Epoch 00104: val_loss did not improve
+5s - loss: 0.0148 - acc: 0.9971 - val_loss: 0.0182 - val_acc: 0.9966
+Epoch 106/500
+Epoch 00105: val_loss did not improve
+5s - loss: 0.0145 - acc: 0.9969 - val_loss: 0.0176 - val_acc: 0.9972
+Epoch 107/500
+Epoch 00106: val_loss did not improve
+5s - loss: 0.0145 - acc: 0.9972 - val_loss: 0.0176 - val_acc: 0.9975
+Epoch 108/500
+Epoch 00107: val_loss did not improve
+5s - loss: 0.0140 - acc: 0.9969 - val_loss: 0.0175 - val_acc: 0.9973
+Epoch 109/500
+Epoch 00108: val_loss did not improve
+5s - loss: 0.0143 - acc: 0.9971 - val_loss: 0.0177 - val_acc: 0.9972
+Epoch 110/500
+Epoch 00109: val_loss did not improve
+5s - loss: 0.0150 - acc: 0.9967 - val_loss: 0.0178 - val_acc: 0.9975
+Epoch 111/500
+Epoch 00110: val_loss did not improve
+5s - loss: 0.0143 - acc: 0.9970 - val_loss: 0.0176 - val_acc: 0.9970
+Epoch 112/500
+Epoch 00111: val_loss did not improve
+5s - loss: 0.0144 - acc: 0.9970 - val_loss: 0.0180 - val_acc: 0.9973
+Epoch 113/500
+Epoch 00112: val_loss did not improve
+5s - loss: 0.0143 - acc: 0.9972 - val_loss: 0.0174 - val_acc: 0.9972
+Epoch 114/500
+Epoch 00113: val_loss did not improve
+5s - loss: 0.0147 - acc: 0.9970 - val_loss: 0.0176 - val_acc: 0.9970
+Epoch 115/500
+Epoch 00114: val_loss improved from 0.01728 to 0.01676, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0143 - acc: 0.9970 - val_loss: 0.0168 - val_acc: 0.9969
+Epoch 116/500
+Epoch 00115: val_loss did not improve
+5s - loss: 0.0140 - acc: 0.9971 - val_loss: 0.0175 - val_acc: 0.9969
+Epoch 117/500
+Epoch 00116: val_loss did not improve
+5s - loss: 0.0141 - acc: 0.9969 - val_loss: 0.0184 - val_acc: 0.9966
+Epoch 118/500
+Epoch 00117: val_loss did not improve
+5s - loss: 0.0138 - acc: 0.9972 - val_loss: 0.0174 - val_acc: 0.9972
+Epoch 119/500
+Epoch 00118: val_loss did not improve
+5s - loss: 0.0135 - acc: 0.9973 - val_loss: 0.0172 - val_acc: 0.9973
+Epoch 120/500
+Epoch 00119: val_loss did not improve
+5s - loss: 0.0144 - acc: 0.9970 - val_loss: 0.0169 - val_acc: 0.9972
+Epoch 121/500
+Epoch 00120: val_loss did not improve
+5s - loss: 0.0132 - acc: 0.9972 - val_loss: 0.0176 - val_acc: 0.9972
+Epoch 122/500
+Epoch 00121: val_loss did not improve
+5s - loss: 0.0141 - acc: 0.9971 - val_loss: 0.0176 - val_acc: 0.9967
+Epoch 123/500
+Epoch 00122: val_loss did not improve
+5s - loss: 0.0141 - acc: 0.9972 - val_loss: 0.0174 - val_acc: 0.9970
+Epoch 124/500
+Epoch 00123: val_loss did not improve
+5s - loss: 0.0139 - acc: 0.9971 - val_loss: 0.0172 - val_acc: 0.9970
+Epoch 125/500
+Epoch 00124: val_loss did not improve
+5s - loss: 0.0134 - acc: 0.9971 - val_loss: 0.0168 - val_acc: 0.9970
+Epoch 126/500
+Epoch 00125: val_loss did not improve
+5s - loss: 0.0135 - acc: 0.9973 - val_loss: 0.0176 - val_acc: 0.9967
+Epoch 127/500
+Epoch 00126: val_loss did not improve
+5s - loss: 0.0134 - acc: 0.9973 - val_loss: 0.0179 - val_acc: 0.9967
+Epoch 128/500
+Epoch 00127: val_loss did not improve
+5s - loss: 0.0136 - acc: 0.9973 - val_loss: 0.0171 - val_acc: 0.9970
+Epoch 129/500
+Epoch 00128: val_loss did not improve
+5s - loss: 0.0136 - acc: 0.9971 - val_loss: 0.0174 - val_acc: 0.9967
+Epoch 130/500
+Epoch 00129: val_loss did not improve
+5s - loss: 0.0132 - acc: 0.9972 - val_loss: 0.0171 - val_acc: 0.9969
+Epoch 131/500
+Epoch 00130: val_loss improved from 0.01676 to 0.01659, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0132 - acc: 0.9973 - val_loss: 0.0166 - val_acc: 0.9970
+Epoch 132/500
+Epoch 00131: val_loss did not improve
+5s - loss: 0.0129 - acc: 0.9972 - val_loss: 0.0172 - val_acc: 0.9972
+Epoch 133/500
+Epoch 00132: val_loss did not improve
+5s - loss: 0.0125 - acc: 0.9974 - val_loss: 0.0173 - val_acc: 0.9967
+Epoch 134/500
+Epoch 00133: val_loss did not improve
+5s - loss: 0.0135 - acc: 0.9971 - val_loss: 0.0168 - val_acc: 0.9972
+Epoch 135/500
+Epoch 00134: val_loss did not improve
+5s - loss: 0.0126 - acc: 0.9973 - val_loss: 0.0177 - val_acc: 0.9967
+Epoch 136/500
+Epoch 00135: val_loss did not improve
+5s - loss: 0.0135 - acc: 0.9972 - val_loss: 0.0168 - val_acc: 0.9973
+Epoch 137/500
+Epoch 00136: val_loss improved from 0.01659 to 0.01646, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0134 - acc: 0.9971 - val_loss: 0.0165 - val_acc: 0.9975
+Epoch 138/500
+Epoch 00137: val_loss did not improve
+5s - loss: 0.0133 - acc: 0.9973 - val_loss: 0.0173 - val_acc: 0.9969
+Epoch 139/500
+Epoch 00138: val_loss did not improve
+5s - loss: 0.0132 - acc: 0.9973 - val_loss: 0.0173 - val_acc: 0.9970
+Epoch 140/500
+Epoch 00139: val_loss did not improve
+5s - loss: 0.0131 - acc: 0.9973 - val_loss: 0.0169 - val_acc: 0.9972
+Epoch 141/500
+Epoch 00140: val_loss did not improve
+5s - loss: 0.0125 - acc: 0.9972 - val_loss: 0.0172 - val_acc: 0.9972
+Epoch 142/500
+Epoch 00141: val_loss did not improve
+5s - loss: 0.0131 - acc: 0.9971 - val_loss: 0.0170 - val_acc: 0.9969
+Epoch 143/500
+Epoch 00142: val_loss did not improve
+5s - loss: 0.0131 - acc: 0.9973 - val_loss: 0.0175 - val_acc: 0.9966
+Epoch 144/500
+Epoch 00143: val_loss did not improve
+5s - loss: 0.0127 - acc: 0.9973 - val_loss: 0.0170 - val_acc: 0.9972
+Epoch 145/500
+Epoch 00144: val_loss did not improve
+5s - loss: 0.0134 - acc: 0.9971 - val_loss: 0.0173 - val_acc: 0.9969
+Epoch 146/500
+Epoch 00145: val_loss did not improve
+5s - loss: 0.0128 - acc: 0.9973 - val_loss: 0.0182 - val_acc: 0.9964
+Epoch 147/500
+Epoch 00146: val_loss did not improve
+5s - loss: 0.0130 - acc: 0.9970 - val_loss: 0.0171 - val_acc: 0.9967
+Epoch 148/500
+Epoch 00147: val_loss did not improve
+5s - loss: 0.0123 - acc: 0.9973 - val_loss: 0.0171 - val_acc: 0.9972
+Epoch 149/500
+Epoch 00148: val_loss did not improve
+5s - loss: 0.0125 - acc: 0.9973 - val_loss: 0.0179 - val_acc: 0.9967
+Epoch 150/500
+Epoch 00149: val_loss did not improve
+5s - loss: 0.0122 - acc: 0.9973 - val_loss: 0.0173 - val_acc: 0.9967
+Epoch 151/500
+Epoch 00150: val_loss did not improve
+5s - loss: 0.0128 - acc: 0.9971 - val_loss: 0.0167 - val_acc: 0.9972
+Epoch 152/500
+Epoch 00151: val_loss did not improve
+5s - loss: 0.0127 - acc: 0.9972 - val_loss: 0.0166 - val_acc: 0.9972
+Epoch 153/500
+Epoch 00152: val_loss improved from 0.01646 to 0.01638, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0126 - acc: 0.9973 - val_loss: 0.0164 - val_acc: 0.9972
+Epoch 154/500
+Epoch 00153: val_loss did not improve
+5s - loss: 0.0123 - acc: 0.9974 - val_loss: 0.0168 - val_acc: 0.9967
+Epoch 155/500
+Epoch 00154: val_loss did not improve
+5s - loss: 0.0131 - acc: 0.9972 - val_loss: 0.0168 - val_acc: 0.9969
+Epoch 156/500
+Epoch 00155: val_loss did not improve
+5s - loss: 0.0128 - acc: 0.9972 - val_loss: 0.0173 - val_acc: 0.9975
+Epoch 157/500
+Epoch 00156: val_loss did not improve
+5s - loss: 0.0124 - acc: 0.9973 - val_loss: 0.0167 - val_acc: 0.9969
+Epoch 158/500
+Epoch 00157: val_loss did not improve
+5s - loss: 0.0121 - acc: 0.9973 - val_loss: 0.0170 - val_acc: 0.9967
+Epoch 159/500
+Epoch 00158: val_loss did not improve
+5s - loss: 0.0129 - acc: 0.9974 - val_loss: 0.0169 - val_acc: 0.9972
+Epoch 160/500
+Epoch 00159: val_loss did not improve
+5s - loss: 0.0127 - acc: 0.9973 - val_loss: 0.0167 - val_acc: 0.9973
+Epoch 161/500
+Epoch 00160: val_loss did not improve
+5s - loss: 0.0124 - acc: 0.9973 - val_loss: 0.0164 - val_acc: 0.9973
+Epoch 162/500
+Epoch 00161: val_loss improved from 0.01638 to 0.01636, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0120 - acc: 0.9974 - val_loss: 0.0164 - val_acc: 0.9972
+Epoch 163/500
+Epoch 00162: val_loss did not improve
+5s - loss: 0.0126 - acc: 0.9972 - val_loss: 0.0165 - val_acc: 0.9967
+Epoch 164/500
+Epoch 00163: val_loss did not improve
+5s - loss: 0.0123 - acc: 0.9974 - val_loss: 0.0169 - val_acc: 0.9969
+Epoch 165/500
+Epoch 00164: val_loss did not improve
+5s - loss: 0.0129 - acc: 0.9973 - val_loss: 0.0175 - val_acc: 0.9964
+Epoch 166/500
+Epoch 00165: val_loss did not improve
+5s - loss: 0.0127 - acc: 0.9973 - val_loss: 0.0168 - val_acc: 0.9967
+Epoch 167/500
+Epoch 00166: val_loss did not improve
+5s - loss: 0.0122 - acc: 0.9972 - val_loss: 0.0172 - val_acc: 0.9973
+Epoch 168/500
+Epoch 00167: val_loss did not improve
+5s - loss: 0.0116 - acc: 0.9975 - val_loss: 0.0165 - val_acc: 0.9969
+Epoch 169/500
+Epoch 00168: val_loss did not improve
+5s - loss: 0.0122 - acc: 0.9973 - val_loss: 0.0168 - val_acc: 0.9970
+Epoch 170/500
+Epoch 00169: val_loss did not improve
+5s - loss: 0.0117 - acc: 0.9973 - val_loss: 0.0174 - val_acc: 0.9964
+Epoch 171/500
+Epoch 00170: val_loss did not improve
+5s - loss: 0.0128 - acc: 0.9972 - val_loss: 0.0173 - val_acc: 0.9969
+Epoch 172/500
+Epoch 00171: val_loss did not improve
+5s - loss: 0.0118 - acc: 0.9974 - val_loss: 0.0167 - val_acc: 0.9975
+Epoch 173/500
+Epoch 00172: val_loss did not improve
+5s - loss: 0.0119 - acc: 0.9972 - val_loss: 0.0173 - val_acc: 0.9972
+Epoch 174/500
+Epoch 00173: val_loss did not improve
+5s - loss: 0.0114 - acc: 0.9973 - val_loss: 0.0168 - val_acc: 0.9970
+Epoch 175/500
+Epoch 00174: val_loss did not improve
+5s - loss: 0.0121 - acc: 0.9973 - val_loss: 0.0168 - val_acc: 0.9967
+Epoch 176/500
+Epoch 00175: val_loss did not improve
+5s - loss: 0.0117 - acc: 0.9974 - val_loss: 0.0172 - val_acc: 0.9966
+Epoch 177/500
+Epoch 00176: val_loss did not improve
+5s - loss: 0.0117 - acc: 0.9972 - val_loss: 0.0169 - val_acc: 0.9967
+Epoch 178/500
+Epoch 00177: val_loss did not improve
+5s - loss: 0.0113 - acc: 0.9975 - val_loss: 0.0168 - val_acc: 0.9972
+Epoch 179/500
+Epoch 00178: val_loss did not improve
+5s - loss: 0.0121 - acc: 0.9973 - val_loss: 0.0172 - val_acc: 0.9966
+Epoch 180/500
+Epoch 00179: val_loss did not improve
+5s - loss: 0.0116 - acc: 0.9974 - val_loss: 0.0168 - val_acc: 0.9972
+Epoch 181/500
+Epoch 00180: val_loss did not improve
+5s - loss: 0.0121 - acc: 0.9971 - val_loss: 0.0167 - val_acc: 0.9973
+Epoch 182/500
+Epoch 00181: val_loss did not improve
+5s - loss: 0.0110 - acc: 0.9975 - val_loss: 0.0167 - val_acc: 0.9973
+Epoch 183/500
+Epoch 00182: val_loss did not improve
+5s - loss: 0.0119 - acc: 0.9975 - val_loss: 0.0166 - val_acc: 0.9975
+Epoch 184/500
+Epoch 00183: val_loss did not improve
+5s - loss: 0.0113 - acc: 0.9974 - val_loss: 0.0167 - val_acc: 0.9967
+Epoch 185/500
+Epoch 00184: val_loss did not improve
+5s - loss: 0.0112 - acc: 0.9974 - val_loss: 0.0173 - val_acc: 0.9967
+Epoch 186/500
+Epoch 00185: val_loss did not improve
+5s - loss: 0.0120 - acc: 0.9974 - val_loss: 0.0170 - val_acc: 0.9970
+Epoch 187/500
+Epoch 00186: val_loss did not improve
+5s - loss: 0.0114 - acc: 0.9974 - val_loss: 0.0170 - val_acc: 0.9966
+Epoch 188/500
+Epoch 00187: val_loss did not improve
+5s - loss: 0.0110 - acc: 0.9974 - val_loss: 0.0174 - val_acc: 0.9966
+Epoch 189/500
+Epoch 00188: val_loss did not improve
+5s - loss: 0.0115 - acc: 0.9975 - val_loss: 0.0172 - val_acc: 0.9975
+Epoch 190/500
+Epoch 00189: val_loss did not improve
+5s - loss: 0.0112 - acc: 0.9974 - val_loss: 0.0168 - val_acc: 0.9969
+Epoch 191/500
+Epoch 00190: val_loss did not improve
+5s - loss: 0.0115 - acc: 0.9973 - val_loss: 0.0173 - val_acc: 0.9966
+Epoch 192/500
+Epoch 00191: val_loss did not improve
+5s - loss: 0.0110 - acc: 0.9976 - val_loss: 0.0172 - val_acc: 0.9972
+Epoch 193/500
+Epoch 00192: val_loss did not improve
+5s - loss: 0.0111 - acc: 0.9974 - val_loss: 0.0165 - val_acc: 0.9970
+Epoch 194/500
+Epoch 00193: val_loss did not improve
+5s - loss: 0.0109 - acc: 0.9976 - val_loss: 0.0174 - val_acc: 0.9975
+Epoch 195/500
+Epoch 00194: val_loss did not improve
+5s - loss: 0.0112 - acc: 0.9973 - val_loss: 0.0168 - val_acc: 0.9973
+Epoch 196/500
+Epoch 00195: val_loss did not improve
+5s - loss: 0.0109 - acc: 0.9976 - val_loss: 0.0177 - val_acc: 0.9966
+Epoch 197/500
+Epoch 00196: val_loss did not improve
+5s - loss: 0.0108 - acc: 0.9974 - val_loss: 0.0167 - val_acc: 0.9969
+Epoch 198/500
+Epoch 00197: val_loss improved from 0.01636 to 0.01631, saving model to ./bestmodel3.hdf5
+7s - loss: 0.0110 - acc: 0.9974 - val_loss: 0.0163 - val_acc: 0.9972
+Epoch 199/500
+Epoch 00198: val_loss did not improve
+5s - loss: 0.0109 - acc: 0.9973 - val_loss: 0.0166 - val_acc: 0.9973
+Epoch 200/500
+Epoch 00199: val_loss did not improve
+5s - loss: 0.0110 - acc: 0.9973 - val_loss: 0.0169 - val_acc: 0.9967
+Epoch 201/500
+Epoch 00200: val_loss did not improve
+5s - loss: 0.0107 - acc: 0.9976 - val_loss: 0.0170 - val_acc: 0.9972
+Epoch 202/500
+Epoch 00201: val_loss did not improve
+5s - loss: 0.0108 - acc: 0.9974 - val_loss: 0.0170 - val_acc: 0.9964
+Epoch 203/500
+Epoch 00202: val_loss did not improve
+5s - loss: 0.0112 - acc: 0.9973 - val_loss: 0.0170 - val_acc: 0.9967
+Epoch 204/500
+Epoch 00203: val_loss did not improve
+5s - loss: 0.0104 - acc: 0.9975 - val_loss: 0.0171 - val_acc: 0.9972
+Epoch 205/500
+Epoch 00204: val_loss did not improve
+5s - loss: 0.0106 - acc: 0.9975 - val_loss: 0.0167 - val_acc: 0.9972
+Epoch 206/500
+Epoch 00205: val_loss improved from 0.01631 to 0.01617, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0101 - acc: 0.9974 - val_loss: 0.0162 - val_acc: 0.9970
+Epoch 207/500
+Epoch 00206: val_loss did not improve
+5s - loss: 0.0105 - acc: 0.9974 - val_loss: 0.0166 - val_acc: 0.9970
+Epoch 208/500
+Epoch 00207: val_loss did not improve
+5s - loss: 0.0103 - acc: 0.9975 - val_loss: 0.0170 - val_acc: 0.9966
+Epoch 209/500
+Epoch 00208: val_loss did not improve
+5s - loss: 0.0103 - acc: 0.9975 - val_loss: 0.0165 - val_acc: 0.9970
+Epoch 210/500
+Epoch 00209: val_loss did not improve
+5s - loss: 0.0111 - acc: 0.9974 - val_loss: 0.0170 - val_acc: 0.9975
+Epoch 211/500
+Epoch 00210: val_loss did not improve
+5s - loss: 0.0109 - acc: 0.9973 - val_loss: 0.0174 - val_acc: 0.9964
+Epoch 212/500
+Epoch 00211: val_loss did not improve
+5s - loss: 0.0099 - acc: 0.9976 - val_loss: 0.0176 - val_acc: 0.9975
+Epoch 213/500
+Epoch 00212: val_loss improved from 0.01617 to 0.01605, saving model to ./bestmodel3.hdf5
+6s - loss: 0.0106 - acc: 0.9975 - val_loss: 0.0160 - val_acc: 0.9973
+Epoch 214/500
+Epoch 00213: val_loss did not improve
+5s - loss: 0.0103 - acc: 0.9974 - val_loss: 0.0170 - val_acc: 0.9970
+Epoch 215/500
+Epoch 00214: val_loss did not improve
+5s - loss: 0.0108 - acc: 0.9973 - val_loss: 0.0172 - val_acc: 0.9972
+Epoch 216/500
+Epoch 00215: val_loss did not improve
+5s - loss: 0.0106 - acc: 0.9974 - val_loss: 0.0169 - val_acc: 0.9973
+Epoch 217/500
+Epoch 00216: val_loss did not improve
+5s - loss: 0.0101 - acc: 0.9976 - val_loss: 0.0172 - val_acc: 0.9969
+Epoch 218/500
+Epoch 00217: val_loss did not improve
+5s - loss: 0.0106 - acc: 0.9975 - val_loss: 0.0168 - val_acc: 0.9969
+Epoch 219/500
+Epoch 00218: val_loss did not improve
+5s - loss: 0.0093 - acc: 0.9976 - val_loss: 0.0180 - val_acc: 0.9975
+Epoch 220/500
+Epoch 00219: val_loss did not improve
+5s - loss: 0.0102 - acc: 0.9973 - val_loss: 0.0173 - val_acc: 0.9970
+Epoch 221/500
+Epoch 00220: val_loss did not improve
+5s - loss: 0.0103 - acc: 0.9974 - val_loss: 0.0171 - val_acc: 0.9963
+Epoch 222/500
+Epoch 00221: val_loss did not improve
+5s - loss: 0.0095 - acc: 0.9974 - val_loss: 0.0171 - val_acc: 0.9975
+Epoch 223/500
+Epoch 00222: val_loss did not improve
+5s - loss: 0.0099 - acc: 0.9974 - val_loss: 0.0170 - val_acc: 0.9976
+Epoch 224/500
+Epoch 00223: val_loss did not improve
+5s - loss: 0.0103 - acc: 0.9974 - val_loss: 0.0170 - val_acc: 0.9975
+Epoch 225/500
+Epoch 00224: val_loss did not improve
+5s - loss: 0.0094 - acc: 0.9976 - val_loss: 0.0176 - val_acc: 0.9975
+Epoch 226/500
+Epoch 00225: val_loss did not improve
+5s - loss: 0.0094 - acc: 0.9975 - val_loss: 0.0174 - val_acc: 0.9975
+Epoch 227/500
+Epoch 00226: val_loss did not improve
+5s - loss: 0.0103 - acc: 0.9975 - val_loss: 0.0170 - val_acc: 0.9973
+Epoch 228/500
+Epoch 00227: val_loss did not improve
+5s - loss: 0.0098 - acc: 0.9973 - val_loss: 0.0176 - val_acc: 0.9966
+Epoch 229/500
+Epoch 00228: val_loss did not improve
+5s - loss: 0.0099 - acc: 0.9976 - val_loss: 0.0175 - val_acc: 0.9963
+Epoch 230/500
+Epoch 00229: val_loss did not improve
+5s - loss: 0.0092 - acc: 0.9976 - val_loss: 0.0168 - val_acc: 0.9973
+Epoch 231/500
+Epoch 00230: val_loss did not improve
+5s - loss: 0.0103 - acc: 0.9973 - val_loss: 0.0175 - val_acc: 0.9973
+Epoch 232/500
+Epoch 00231: val_loss did not improve
+5s - loss: 0.0098 - acc: 0.9975 - val_loss: 0.0179 - val_acc: 0.9964
+Epoch 233/500
+Epoch 00232: val_loss did not improve
+5s - loss: 0.0096 - acc: 0.9976 - val_loss: 0.0165 - val_acc: 0.9972
+Epoch 234/500
+Epoch 00233: val_loss did not improve
+5s - loss: 0.0100 - acc: 0.9973 - val_loss: 0.0175 - val_acc: 0.9975
+Epoch 235/500
+Epoch 00234: val_loss did not improve
+5s - loss: 0.0098 - acc: 0.9974 - val_loss: 0.0177 - val_acc: 0.9969
+Epoch 236/500
+Epoch 00235: val_loss did not improve
+5s - loss: 0.0100 - acc: 0.9976 - val_loss: 0.0172 - val_acc: 0.9973
+Epoch 237/500
+Epoch 00236: val_loss did not improve
+5s - loss: 0.0089 - acc: 0.9977 - val_loss: 0.0176 - val_acc: 0.9972
+Epoch 238/500
+Epoch 00237: val_loss did not improve
+5s - loss: 0.0095 - acc: 0.9975 - val_loss: 0.0183 - val_acc: 0.9975
+Epoch 239/500
+Epoch 00238: val_loss did not improve
+5s - loss: 0.0095 - acc: 0.9975 - val_loss: 0.0176 - val_acc: 0.9973
+Epoch 240/500
+Epoch 00239: val_loss did not improve
+5s - loss: 0.0097 - acc: 0.9975 - val_loss: 0.0171 - val_acc: 0.9972
+Epoch 241/500
+Epoch 00240: val_loss did not improve
+5s - loss: 0.0092 - acc: 0.9977 - val_loss: 0.0178 - val_acc: 0.9972
+Epoch 242/500
+Epoch 00241: val_loss did not improve
+5s - loss: 0.0091 - acc: 0.9975 - val_loss: 0.0178 - val_acc: 0.9969
+Epoch 243/500
+Epoch 00242: val_loss did not improve
+5s - loss: 0.0087 - acc: 0.9977 - val_loss: 0.0181 - val_acc: 0.9969
+Epoch 244/500
+Epoch 00243: val_loss did not improve
+5s - loss: 0.0103 - acc: 0.9975 - val_loss: 0.0178 - val_acc: 0.9966
+Epoch 245/500
+Epoch 00244: val_loss did not improve
+5s - loss: 0.0093 - acc: 0.9977 - val_loss: 0.0178 - val_acc: 0.9969
+Epoch 246/500
+Epoch 00245: val_loss did not improve
+5s - loss: 0.0086 - acc: 0.9977 - val_loss: 0.0186 - val_acc: 0.9975
+Epoch 247/500
+Epoch 00246: val_loss did not improve
+5s - loss: 0.0093 - acc: 0.9976 - val_loss: 0.0171 - val_acc: 0.9970
+Epoch 248/500
+Epoch 00247: val_loss did not improve
+5s - loss: 0.0096 - acc: 0.9976 - val_loss: 0.0178 - val_acc: 0.9969
+Epoch 249/500
+Epoch 00248: val_loss did not improve
+5s - loss: 0.0095 - acc: 0.9974 - val_loss: 0.0184 - val_acc: 0.9966
+Epoch 250/500
+Epoch 00249: val_loss did not improve
+5s - loss: 0.0091 - acc: 0.9974 - val_loss: 0.0180 - val_acc: 0.9976
+Epoch 251/500
+Epoch 00250: val_loss did not improve
+5s - loss: 0.0089 - acc: 0.9974 - val_loss: 0.0172 - val_acc: 0.9975
+Epoch 252/500
+Epoch 00251: val_loss did not improve
+5s - loss: 0.0086 - acc: 0.9977 - val_loss: 0.0183 - val_acc: 0.9976
+Epoch 253/500
+Epoch 00252: val_loss did not improve
+5s - loss: 0.0086 - acc: 0.9977 - val_loss: 0.0185 - val_acc: 0.9966
+Epoch 254/500
+Epoch 00253: val_loss did not improve
+5s - loss: 0.0090 - acc: 0.9974 - val_loss: 0.0176 - val_acc: 0.9967
+Epoch 255/500
+Epoch 00254: val_loss did not improve
+5s - loss: 0.0093 - acc: 0.9976 - val_loss: 0.0176 - val_acc: 0.9972
+Epoch 256/500
+Epoch 00255: val_loss did not improve
+5s - loss: 0.0083 - acc: 0.9977 - val_loss: 0.0183 - val_acc: 0.9966
+Epoch 257/500
+Epoch 00256: val_loss did not improve
+5s - loss: 0.0090 - acc: 0.9975 - val_loss: 0.0179 - val_acc: 0.9972
+Epoch 258/500
+Epoch 00257: val_loss did not improve
+5s - loss: 0.0085 - acc: 0.9977 - val_loss: 0.0182 - val_acc: 0.9964
+Epoch 259/500
+Epoch 00258: val_loss did not improve
+5s - loss: 0.0095 - acc: 0.9977 - val_loss: 0.0180 - val_acc: 0.9975
+Epoch 260/500
+Epoch 00259: val_loss did not improve
+5s - loss: 0.0085 - acc: 0.9975 - val_loss: 0.0190 - val_acc: 0.9973
+Epoch 261/500
+Epoch 00260: val_loss did not improve
+5s - loss: 0.0085 - acc: 0.9977 - val_loss: 0.0172 - val_acc: 0.9972
+Epoch 262/500
+Epoch 00261: val_loss did not improve
+5s - loss: 0.0087 - acc: 0.9976 - val_loss: 0.0182 - val_acc: 0.9972
+Epoch 263/500
+Epoch 00262: val_loss did not improve
+5s - loss: 0.0090 - acc: 0.9974 - val_loss: 0.0181 - val_acc: 0.9970
+Epoch 264/500
+Epoch 00263: val_loss did not improve
+Epoch 00263: early stopping
+5s - loss: 0.0080 - acc: 0.9978 - val_loss: 0.0176 - val_acc: 0.9976
+training done!
+____________________________________________________________________________________________________
+Layer (type)                     Output Shape          Param #     Connected to                     
+====================================================================================================
+cov1 (Convolution1D)             (None, 58, 80)        1360        convolution1d_input_2[0][0]      
+____________________________________________________________________________________________________
+leakyrelu_1 (LeakyReLU)          (None, 58, 80)        0           cov1[0][0]                       
+____________________________________________________________________________________________________
+dropout_1 (Dropout)              (None, 58, 80)        0           leakyrelu_1[0][0]                
+____________________________________________________________________________________________________
+cov2 (Convolution1D)             (None, 57, 80)        12880       dropout_1[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_2 (LeakyReLU)          (None, 57, 80)        0           cov2[0][0]                       
+____________________________________________________________________________________________________
+dropout_2 (Dropout)              (None, 57, 80)        0           leakyrelu_2[0][0]                
+____________________________________________________________________________________________________
+cov3 (Convolution1D)             (None, 54, 80)        25680       dropout_2[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_3 (LeakyReLU)          (None, 54, 80)        0           cov3[0][0]                       
+____________________________________________________________________________________________________
+dropout_3 (Dropout)              (None, 54, 80)        0           leakyrelu_3[0][0]                
+____________________________________________________________________________________________________
+cov4 (Convolution1D)             (None, 51, 80)        25680       dropout_3[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_4 (LeakyReLU)          (None, 51, 80)        0           cov4[0][0]                       
+____________________________________________________________________________________________________
+dropout_4 (Dropout)              (None, 51, 80)        0           leakyrelu_4[0][0]                
+____________________________________________________________________________________________________
+cov5 (Convolution1D)             (None, 48, 80)        25680       dropout_4[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_5 (LeakyReLU)          (None, 48, 80)        0           cov5[0][0]                       
+____________________________________________________________________________________________________
+dropout_5 (Dropout)              (None, 48, 80)        0           leakyrelu_5[0][0]                
+____________________________________________________________________________________________________
+flatten_1 (Flatten)              (None, 3840)          0           dropout_5[0][0]                  
+____________________________________________________________________________________________________
+dense_1 (Dense)                  (None, 100)           384100      flatten_1[0][0]                  
+____________________________________________________________________________________________________
+leakyrelu_6 (LeakyReLU)          (None, 100)           0           dense_1[0][0]                    
+____________________________________________________________________________________________________
+dropout_6 (Dropout)              (None, 100)           0           leakyrelu_6[0][0]                
+____________________________________________________________________________________________________
+dense_2 (Dense)                  (None, 1)             101         dropout_6[0][0]                  
+____________________________________________________________________________________________________
+activation_1 (Activation)        (None, 1)             0           dense_2[0][0]                    
+====================================================================================================
+Total params: 475481
+____________________________________________________________________________________________________
+**************vadiation results on validation dataset************
+  32/6740 [..............................] - ETA: 0s 128/6740 [..............................] - ETA: 0s 224/6740 [..............................] - ETA: 0s 320/6740 [>.............................] - ETA: 0s 416/6740 [>.............................] - ETA: 0s 512/6740 [=>............................] - ETA: 0s 608/6740 [=>............................] - ETA: 0s 704/6740 [==>...........................] - ETA: 0s 800/6740 [==>...........................] - ETA: 0s 896/6740 [==>...........................] - ETA: 0s 992/6740 [===>..........................] - ETA: 0s1088/6740 [===>..........................] - ETA: 0s1184/6740 [====>.........................] - ETA: 0s1280/6740 [====>.........................] - ETA: 0s1376/6740 [=====>........................] - ETA: 0s1472/6740 [=====>........................] - ETA: 0s1568/6740 [=====>........................] - ETA: 0s1696/6740 [======>.......................] - ETA: 0s1824/6740 [=======>......................] - ETA: 0s1952/6740 [=======>......................] - ETA: 0s2080/6740 [========>.....................] - ETA: 0s2208/6740 [========>.....................] - ETA: 0s2336/6740 [=========>....................] - ETA: 0s2432/6740 [=========>....................] - ETA: 0s2560/6740 [==========>...................] - ETA: 0s2688/6740 [==========>...................] - ETA: 0s2816/6740 [===========>..................] - ETA: 0s2944/6740 [============>.................] - ETA: 0s3072/6740 [============>.................] - ETA: 0s3200/6740 [=============>................] - ETA: 0s3328/6740 [=============>................] - ETA: 0s3456/6740 [==============>...............] - ETA: 0s3584/6740 [==============>...............] - ETA: 0s3712/6740 [===============>..............] - ETA: 0s3840/6740 [================>.............] - ETA: 0s3968/6740 [================>.............] - ETA: 0s4096/6740 [=================>............] - ETA: 0s4224/6740 [=================>............] - ETA: 0s4352/6740 [==================>...........] - ETA: 0s4480/6740 [==================>...........] - ETA: 0s4608/6740 [===================>..........] - ETA: 0s4736/6740 [====================>.........] - ETA: 0s4864/6740 [====================>.........] - ETA: 0s4992/6740 [=====================>........] - ETA: 0s5120/6740 [=====================>........] - ETA: 0s5248/6740 [======================>.......] - ETA: 0s5376/6740 [======================>.......] - ETA: 0s5504/6740 [=======================>......] - ETA: 0s5632/6740 [========================>.....] - ETA: 0s5760/6740 [========================>.....] - ETA: 0s5888/6740 [=========================>....] - ETA: 0s6016/6740 [=========================>....] - ETA: 0s6144/6740 [==========================>...] - ETA: 0s6272/6740 [==========================>...] - ETA: 0s6400/6740 [===========================>..] - ETA: 0s6528/6740 [============================>.] - ETA: 0s6656/6740 [============================>.] - ETA: 0s[0.016049715399209671, 0.99732937685459944]
+  32/6740 [..............................] - ETA: 0s 192/6740 [..............................] - ETA: 0s 352/6740 [>.............................] - ETA: 0s 512/6740 [=>............................] - ETA: 0s 672/6740 [=>............................] - ETA: 0s 832/6740 [==>...........................] - ETA: 0s 992/6740 [===>..........................] - ETA: 0s1152/6740 [====>.........................] - ETA: 0s1312/6740 [====>.........................] - ETA: 0s1472/6740 [=====>........................] - ETA: 0s1632/6740 [======>.......................] - ETA: 0s1792/6740 [======>.......................] - ETA: 0s1952/6740 [=======>......................] - ETA: 0s2112/6740 [========>.....................] - ETA: 0s2272/6740 [=========>....................] - ETA: 0s2432/6740 [=========>....................] - ETA: 0s2592/6740 [==========>...................] - ETA: 0s2752/6740 [===========>..................] - ETA: 0s2912/6740 [===========>..................] - ETA: 0s3072/6740 [============>.................] - ETA: 0s3232/6740 [=============>................] - ETA: 0s3392/6740 [==============>...............] - ETA: 0s3552/6740 [==============>...............] - ETA: 0s3712/6740 [===============>..............] - ETA: 0s3872/6740 [================>.............] - ETA: 0s4032/6740 [================>.............] - ETA: 0s4192/6740 [=================>............] - ETA: 0s4352/6740 [==================>...........] - ETA: 0s4512/6740 [===================>..........] - ETA: 0s4672/6740 [===================>..........] - ETA: 0s4832/6740 [====================>.........] - ETA: 0s4992/6740 [=====================>........] - ETA: 0s5152/6740 [=====================>........] - ETA: 0s5312/6740 [======================>.......] - ETA: 0s5472/6740 [=======================>......] - ETA: 0s5632/6740 [========================>.....] - ETA: 0s5792/6740 [========================>.....] - ETA: 0s5952/6740 [=========================>....] - ETA: 0s6112/6740 [==========================>...] - ETA: 0s6272/6740 [==========================>...] - ETA: 0s6432/6740 [===========================>..] - ETA: 0s6592/6740 [============================>.] - ETA: 0s6740/6740 [==============================] - 0s     
+  32/6740 [..............................] - ETA: 0s 192/6740 [..............................] - ETA: 0s 352/6740 [>.............................] - ETA: 0s 512/6740 [=>............................] - ETA: 0s 672/6740 [=>............................] - ETA: 0s 832/6740 [==>...........................] - ETA: 0s 992/6740 [===>..........................] - ETA: 0s1152/6740 [====>.........................] - ETA: 0s1312/6740 [====>.........................] - ETA: 0s1472/6740 [=====>........................] - ETA: 0s1632/6740 [======>.......................] - ETA: 0s1792/6740 [======>.......................] - ETA: 0s1952/6740 [=======>......................] - ETA: 0s2112/6740 [========>.....................] - ETA: 0s2272/6740 [=========>....................] - ETA: 0s2432/6740 [=========>....................] - ETA: 0s2592/6740 [==========>...................] - ETA: 0s2752/6740 [===========>..................] - ETA: 0s2912/6740 [===========>..................] - ETA: 0s3072/6740 [============>.................] - ETA: 0s3232/6740 [=============>................] - ETA: 0s3392/6740 [==============>...............] - ETA: 0s3552/6740 [==============>...............] - ETA: 0s3712/6740 [===============>..............] - ETA: 0s3872/6740 [================>.............] - ETA: 0s4032/6740 [================>.............] - ETA: 0s4192/6740 [=================>............] - ETA: 0s4352/6740 [==================>...........] - ETA: 0s4512/6740 [===================>..........] - ETA: 0s4672/6740 [===================>..........] - ETA: 0s4832/6740 [====================>.........] - ETA: 0s4992/6740 [=====================>........] - ETA: 0s5152/6740 [=====================>........] - ETA: 0s5312/6740 [======================>.......] - ETA: 0s5472/6740 [=======================>......] - ETA: 0s5632/6740 [========================>.....] - ETA: 0s5792/6740 [========================>.....] - ETA: 0s5952/6740 [=========================>....] - ETA: 0s6112/6740 [==========================>...] - ETA: 0s6272/6740 [==========================>...] - ETA: 0s6432/6740 [===========================>..] - ETA: 0s6592/6740 [============================>.] - ETA: 0s6740/6740 [==============================] - 0s     
+************************
+auc: 0.999143076015
+mcc: 0.994665059665
+negative ---> precision:0.995564754583, recall:0.999109792285, f1score:0.997334123223, support:3370
+positive ---> precision:0.999106611078, recall:0.995548961424, f1score:0.997324613555, support:3370
+************************
+**************prediction results on test dataset************
+  32/6740 [..............................] - ETA: 0s 160/6740 [..............................] - ETA: 0s 288/6740 [>.............................] - ETA: 0s 416/6740 [>.............................] - ETA: 0s 544/6740 [=>............................] - ETA: 0s 672/6740 [=>............................] - ETA: 0s 800/6740 [==>...........................] - ETA: 0s 928/6740 [===>..........................] - ETA: 0s1056/6740 [===>..........................] - ETA: 0s1184/6740 [====>.........................] - ETA: 0s1312/6740 [====>.........................] - ETA: 0s1440/6740 [=====>........................] - ETA: 0s1568/6740 [=====>........................] - ETA: 0s1696/6740 [======>.......................] - ETA: 0s1824/6740 [=======>......................] - ETA: 0s1952/6740 [=======>......................] - ETA: 0s2080/6740 [========>.....................] - ETA: 0s2208/6740 [========>.....................] - ETA: 0s2336/6740 [=========>....................] - ETA: 0s2464/6740 [=========>....................] - ETA: 0s2592/6740 [==========>...................] - ETA: 0s2720/6740 [===========>..................] - ETA: 0s2848/6740 [===========>..................] - ETA: 0s2976/6740 [============>.................] - ETA: 0s3104/6740 [============>.................] - ETA: 0s3232/6740 [=============>................] - ETA: 0s3360/6740 [=============>................] - ETA: 0s3488/6740 [==============>...............] - ETA: 0s3616/6740 [===============>..............] - ETA: 0s3744/6740 [===============>..............] - ETA: 0s3872/6740 [================>.............] - ETA: 0s4000/6740 [================>.............] - ETA: 0s4128/6740 [=================>............] - ETA: 0s4256/6740 [=================>............] - ETA: 0s4384/6740 [==================>...........] - ETA: 0s4512/6740 [===================>..........] - ETA: 0s4640/6740 [===================>..........] - ETA: 0s4768/6740 [====================>.........] - ETA: 0s4896/6740 [====================>.........] - ETA: 0s5024/6740 [=====================>........] - ETA: 0s5152/6740 [=====================>........] - ETA: 0s5280/6740 [======================>.......] - ETA: 0s5408/6740 [=======================>......] - ETA: 0s5536/6740 [=======================>......] - ETA: 0s5664/6740 [========================>.....] - ETA: 0s5792/6740 [========================>.....] - ETA: 0s5920/6740 [=========================>....] - ETA: 0s6048/6740 [=========================>....] - ETA: 0s6176/6740 [==========================>...] - ETA: 0s6304/6740 [===========================>..] - ETA: 0s6432/6740 [===========================>..] - ETA: 0s6560/6740 [============================>.] - ETA: 0s6688/6740 [============================>.] - ETA: 0s[0.010528821847898542, 0.99777448071216612]
+  32/6740 [..............................] - ETA: 0s 192/6740 [..............................] - ETA: 0s 352/6740 [>.............................] - ETA: 0s 512/6740 [=>............................] - ETA: 0s 672/6740 [=>............................] - ETA: 0s 832/6740 [==>...........................] - ETA: 0s 992/6740 [===>..........................] - ETA: 0s1152/6740 [====>.........................] - ETA: 0s1312/6740 [====>.........................] - ETA: 0s1472/6740 [=====>........................] - ETA: 0s1632/6740 [======>.......................] - ETA: 0s1792/6740 [======>.......................] - ETA: 0s1952/6740 [=======>......................] - ETA: 0s2112/6740 [========>.....................] - ETA: 0s2272/6740 [=========>....................] - ETA: 0s2432/6740 [=========>....................] - ETA: 0s2592/6740 [==========>...................] - ETA: 0s2752/6740 [===========>..................] - ETA: 0s2912/6740 [===========>..................] - ETA: 0s3072/6740 [============>.................] - ETA: 0s3232/6740 [=============>................] - ETA: 0s3392/6740 [==============>...............] - ETA: 0s3552/6740 [==============>...............] - ETA: 0s3712/6740 [===============>..............] - ETA: 0s3872/6740 [================>.............] - ETA: 0s4032/6740 [================>.............] - ETA: 0s4192/6740 [=================>............] - ETA: 0s4352/6740 [==================>...........] - ETA: 0s4512/6740 [===================>..........] - ETA: 0s4672/6740 [===================>..........] - ETA: 0s4832/6740 [====================>.........] - ETA: 0s4992/6740 [=====================>........] - ETA: 0s5152/6740 [=====================>........] - ETA: 0s5312/6740 [======================>.......] - ETA: 0s5472/6740 [=======================>......] - ETA: 0s5632/6740 [========================>.....] - ETA: 0s5792/6740 [========================>.....] - ETA: 0s5952/6740 [=========================>....] - ETA: 0s6112/6740 [==========================>...] - ETA: 0s6272/6740 [==========================>...] - ETA: 0s6432/6740 [===========================>..] - ETA: 0s6592/6740 [============================>.] - ETA: 0s6740/6740 [==============================] - 0s     
+  32/6740 [..............................] - ETA: 0s 192/6740 [..............................] - ETA: 0s 352/6740 [>.............................] - ETA: 0s 512/6740 [=>............................] - ETA: 0s 672/6740 [=>............................] - ETA: 0s 832/6740 [==>...........................] - ETA: 0s 992/6740 [===>..........................] - ETA: 0s1152/6740 [====>.........................] - ETA: 0s1312/6740 [====>.........................] - ETA: 0s1472/6740 [=====>........................] - ETA: 0s1632/6740 [======>.......................] - ETA: 0s1792/6740 [======>.......................] - ETA: 0s1952/6740 [=======>......................] - ETA: 0s2112/6740 [========>.....................] - ETA: 0s2272/6740 [=========>....................] - ETA: 0s2432/6740 [=========>....................] - ETA: 0s2592/6740 [==========>...................] - ETA: 0s2752/6740 [===========>..................] - ETA: 0s2912/6740 [===========>..................] - ETA: 0s3072/6740 [============>.................] - ETA: 0s3232/6740 [=============>................] - ETA: 0s3392/6740 [==============>...............] - ETA: 0s3552/6740 [==============>...............] - ETA: 0s3712/6740 [===============>..............] - ETA: 0s3872/6740 [================>.............] - ETA: 0s4032/6740 [================>.............] - ETA: 0s4192/6740 [=================>............] - ETA: 0s4352/6740 [==================>...........] - ETA: 0s4512/6740 [===================>..........] - ETA: 0s4672/6740 [===================>..........] - ETA: 0s4832/6740 [====================>.........] - ETA: 0s4992/6740 [=====================>........] - ETA: 0s5152/6740 [=====================>........] - ETA: 0s5312/6740 [======================>.......] - ETA: 0s5472/6740 [=======================>......] - ETA: 0s5632/6740 [========================>.....] - ETA: 0s5792/6740 [========================>.....] - ETA: 0s5952/6740 [=========================>....] - ETA: 0s6112/6740 [==========================>...] - ETA: 0s6272/6740 [==========================>...] - ETA: 0s6432/6740 [===========================>..] - ETA: 0s6592/6740 [============================>.] - ETA: 0s6740/6740 [==============================] - 0s     
+************************
+auc: 0.999585714412
+mcc: 0.99555005718
+negative ---> precision:0.997037037037, recall:0.998516320475, f1score:0.997776130467, support:3370
+positive ---> precision:0.998514115899, recall:0.99703264095, f1score:0.997772828508, support:3370
+************************
