@@ -8,6 +8,8 @@ Keras v2+
 
 Tensorflow 1.12
 
+Theano 
+
 Nvidia Tesla K80 (12GB)
 
 
