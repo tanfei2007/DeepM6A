@@ -2,7 +2,7 @@
 
 
 ## comet 
-srun --partition=gpu-shared --pty --nodes=1 --ntasks-per-node=6 --gres=gpu:1 -t 00:30:00 --wait=0 --export=ALL /bin/bash
+srun --partition=gpu-shared --pty --nodes=1 --ntasks-per-node=6 --gres=gpu:1 -t 10:30:00 --wait=0 --export=ALL /bin/bash
 
  module purge
  
