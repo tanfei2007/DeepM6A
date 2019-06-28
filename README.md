@@ -1,6 +1,6 @@
-# DeepM6A
+# DEM6A
 
-Deep Learning for DNA Methylation on N6-Adenine
+Detection and Eclucidation of DNA Methylation on N6-Adenine
 
 Dev Tools:
 
