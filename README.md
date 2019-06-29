@@ -8,7 +8,7 @@ Detection and Eclucidation of DNA Methylation on N6-Adenine
 - python3
     
 ## Installation
-- pip install -i https://test.pypi.org/simple/ DEM6A
+- pip3 install -i https://test.pypi.org/simple/ DEM6A==0.3
 
 ## Manual
 - [run_DeepM6A.ipynb](https://github.com/tanfei2007/DeepM6A/blob/master/dist/run_DeepM6A.ipynb)
