@@ -141,9 +141,9 @@ fdr = 0.9
 
 
 
-## Semi-synthetic datasets Ara
+## Semi-synthetic datasets
 
-| 0.95| 0.99| 1 | 
-|--|--| -- |
-| 0.  |0.  |0.   |
+|Species| 0.95| 0.99| 1 | 
+|--|--|--| -- |
+|Ara | 0.  |0.  |0.   |
 
